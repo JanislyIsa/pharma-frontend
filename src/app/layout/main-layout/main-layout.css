@@ -6,3 +6,8 @@
 .collapsed { grid-template-columns: 0 minmax(0, 1fr); }
 .collapsed .shell-sidebar { visibility: hidden; }
 @media (max-width: 760px) { .shell { grid-template-columns: 220px minmax(0, 1fr); } .shell-main { padding: 20px 14px; } .collapsed { grid-template-columns: 0 minmax(0, 1fr); } }
+@media print {
+  .shell { display: block; min-height: 0; }
+  .shell-header, .shell-sidebar { display: none !important; }
+  .shell-main { padding: 0; background: #fff; }
+}

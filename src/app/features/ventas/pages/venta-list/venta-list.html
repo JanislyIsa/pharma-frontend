@@ -3,7 +3,7 @@
     <div><p class="eyebrow">OPERACIONES</p><h1>Consulta de ventas</h1></div>
     <div class="heading-actions no-imprimir">
       <button class="button" type="button" [disabled]="!resultado()?.contenido?.length" (click)="imprimirConsulta()">🖨 Imprimir consulta</button>
-      <a class="button button-primary" routerLink="nueva">+ Nueva venta</a>
+      <a *appSiPermiso="'VENTAS_REGISTRAR'" class="button button-primary" routerLink="nueva">+ Nueva venta</a>
     </div>
   </header>
 

@@ -4,7 +4,7 @@
     <h1>Productos</h1>
     <p class="subheading">Administra productos y sus categorías.</p>
   </div>
-  <a class="button button-primary" routerLink="nuevo"><span>＋</span> Nuevo producto</a>
+  <a *appSiPermiso="'CATALOGO_ESCRIBIR'" class="button button-primary" routerLink="nuevo"><span>＋</span> Nuevo producto</a>
 </section>
 
 @if (error()) {
@@ -43,7 +43,7 @@
           <th>Categoría</th>
           <th><button type="button" class="sort" (click)="ordenar('precio')">Precio <span>{{ ordenarPor() === 'precio' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
           <th><button type="button" class="sort" (click)="ordenar('stock')">Stock <span>{{ ordenarPor() === 'stock' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
-          <th>Estado</th><th class="actions-col">Acciones</th>
+          <th>Estado</th><th *appSiPermiso="'CATALOGO_ESCRIBIR'" class="actions-col">Acciones</th>
         </tr></thead>
         <tbody>
           @for (producto of productos(); track producto.id) {
@@ -53,7 +53,7 @@
               <td>{{ producto.precio | currency:'PEN':'S/ ':'1.2-2' }}</td>
               <td>{{ producto.stock }}</td>
               <td><span class="badge" [class.inactive]="!producto.estado">{{ producto.estado ? 'Activo' : 'Inactivo' }}</span></td>
-              <td class="actions-col">
+              <td *appSiPermiso="'CATALOGO_ESCRIBIR'" class="actions-col">
                 <a class="text-action" [routerLink]="[producto.id, 'editar']">Editar</a>
                 <button class="text-action danger" type="button" [disabled]="!producto.estado || cargando()" (click)="darDeBaja(producto)">Dar de baja</button>
               </td>
@@ -76,3 +76,4 @@
 </section>
 
 <p class="page-note">El filtro por categoría se aplica a los resultados de la página actual.</p>
+

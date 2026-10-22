@@ -2,8 +2,8 @@ import { Component, inject, input, signal } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/auth/auth-service';
-import { mensajeError } from '../../../core/utils/http-error';
+import { AuthService } from '../../../../core/auth/auth-service';
+import { mensajeError } from '../../../../core/utils/http-error';
 
 @Component({
   selector: 'app-login',
@@ -51,3 +51,4 @@ export class Login {
       : '/inicio';
   }
 }
+

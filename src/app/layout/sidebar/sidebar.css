@@ -1,13 +1,13 @@
 :host { display: block; height: 100%; }
-.sidebar { position: relative; display: flex; flex-direction: column; min-height: 100%; padding: 28px 16px; background: #fff; border-right: 1px solid #e5e9e5; }
-.eyebrow { margin: 0 10px 32px; color: #65746f; font-size: 11px; }
-.section-label { margin: 0 10px 11px; color: #99a39e; font-size: 9px; font-weight: 750; letter-spacing: .15em; }
-nav { display: grid; gap: 5px; }
-nav a { display: flex; align-items: center; gap: 12px; min-height: 43px; padding: 0 11px; border-radius: 10px; color: #56635d; text-decoration: none; font-size: 13px; font-weight: 580; }
-nav a:hover { background: #f3f6f3; color: #1e433a; }
-nav a.active { background: #eaf3ef; color: #1c5848; font-weight: 700; }
-.nav-icon { display: grid; width: 23px; height: 23px; place-items: center; color: #467766; font-size: 18px; }
+.sidebar { height: 100%; min-width: 240px; padding: 16px 12px; background: #fff; border-right: 1px solid #e3e8f0; }
+.eyebrow { margin: 0 8px 24px; color: #6b7280; font-size: 12px; }
+.section-label { margin: 0 8px 8px; color: #6b7280; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+nav { display: grid; gap: 3px; }
+nav a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #1f2937; text-decoration: none; }
+nav a:hover { background: #eef2f8; }
+nav a.active { background: #0f2e5c; color: #fff; }
+.nav-icon { display: grid; width: 23px; height: 23px; place-items: center; color: inherit; font-size: 18px; }
 .nav-arrow { margin-left: auto; font-size: 20px; }
-.sidebar-foot { display: flex; align-items: center; gap: 10px; margin-top: auto; padding: 17px 8px 0; border-top: 1px solid #edf0ed; color: #31433b; font-size: 11px; }
-.foot-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 9px; background: #12304a; color: #c0e2d4; font-weight: 800; }
-.sidebar-foot small { display: block; margin-top: 2px; color: #8a968f; font-size: 10px; }
+.sidebar-foot { display: flex; align-items: center; gap: 10px; margin: 32px 8px 0; padding-top: 14px; border-top: 1px solid #e3e8f0; color: #1f2937; font-size: 11px; }
+.foot-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 8px; background: #0f2e5c; color: #f2a900; font-weight: 800; }
+.sidebar-foot small { display: block; margin-top: 2px; color: #6b7280; font-size: 10px; }

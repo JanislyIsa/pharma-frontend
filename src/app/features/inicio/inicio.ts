@@ -18,24 +18,24 @@ import { RouterLink } from '@angular/router';
     <p class="note"><span class="note-dot"></span> Conectado a PharmaBackend <code>localhost:8080</code></p>
   `,
   styles: [`
-    .welcome { padding: clamp(27px, 5vw, 58px); border: 1px solid #e6ebe5; border-radius: 22px; background: linear-gradient(115deg,#fff 15%,#eef5f0 100%); }
-    .eyebrow { margin: 0 0 18px; color: #548371; font-size: 10px; font-weight: 750; letter-spacing: .16em; }
-    h1 { max-width: 640px; margin: 0; color: #183e35; font-size: clamp(38px, 6vw, 64px); line-height: 1.02; letter-spacing: -.06em; }
-    .intro { max-width: 450px; margin: 18px 0 26px; color: #68766f; line-height: 1.7; font-size: 14px; }
+    .welcome { padding: clamp(27px, 5vw, 58px); border: 1px solid #e3e8f0; border-radius: 22px; background: linear-gradient(115deg,#fff 15%,#eef2f8 100%); }
+    .eyebrow { margin: 0 0 18px; color: #0f2e5c; font-size: 10px; font-weight: 750; letter-spacing: .16em; }
+    h1 { max-width: 640px; margin: 0; color: #0f2e5c; font-size: clamp(38px, 6vw, 64px); line-height: 1.02; letter-spacing: -.06em; }
+    .intro { max-width: 450px; margin: 18px 0 26px; color: #6b7280; line-height: 1.7; font-size: 14px; }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; }
-    .button { display: inline-flex; gap: 18px; align-items: center; padding: 11px 15px; border: 1px solid #dbe3dd; border-radius: 10px; color: #315347; text-decoration: none; font-size: 12px; font-weight: 650; }
-    .button-primary { border-color: #1c5848; background: #1c5848; color: #fff; }
+    .button { display: inline-flex; gap: 18px; align-items: center; padding: 11px 15px; border: 1px solid #cbd5e1; border-radius: 10px; color: #1f2937; text-decoration: none; font-size: 12px; font-weight: 650; }
+    .button-primary { border-color: #0f2e5c; background: #0f2e5c; color: #fff; }
     .quick-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 18px; }
-    .quick-card { display: flex; align-items: center; gap: 14px; padding: 19px; border: 1px solid #e6ebe5; border-radius: 15px; background: #fff; color: inherit; text-decoration: none; }
+    .quick-card { display: flex; align-items: center; gap: 14px; padding: 19px; border: 1px solid #e3e8f0; border-radius: 15px; background: #fff; color: inherit; text-decoration: none; }
     .quick-card > span:nth-child(2) { display: grid; gap: 4px; }
-    .quick-card small { color: #94a099; font-size: 9px; font-weight: 750; letter-spacing: .12em; }
-    .quick-card strong { color: #26483d; font-size: 15px; }
-    .quick-card em { color: #839087; font-size: 11px; font-style: normal; }
-    .quick-card b { margin-left: auto; color: #719486; }
-    .quick-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; background: #eef5f1; color: #356958; font-size: 20px; }
-    .note { display: flex; align-items: center; gap: 8px; margin: 21px 3px; color: #77837c; font-size: 11px; }
-    .note-dot { width: 7px; height: 7px; border-radius: 50%; background: #53a179; }
-    code { color: #52675c; }
+    .quick-card small { color: #6b7280; font-size: 9px; font-weight: 750; letter-spacing: .12em; }
+    .quick-card strong { color: #1f2937; font-size: 15px; }
+    .quick-card em { color: #6b7280; font-size: 11px; font-style: normal; }
+    .quick-card b { margin-left: auto; color: #0f2e5c; }
+    .quick-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; background: #eef2f8; color: #0f2e5c; font-size: 20px; }
+    .note { display: flex; align-items: center; gap: 8px; margin: 21px 3px; color: #6b7280; font-size: 11px; }
+    .note-dot { width: 7px; height: 7px; border-radius: 50%; background: #f2a900; }
+    code { color: #1f2937; }
     @media(max-width:600px) { .quick-grid { grid-template-columns: 1fr; } }
   `],
 })

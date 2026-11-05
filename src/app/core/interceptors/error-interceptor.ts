@@ -11,6 +11,7 @@ export const errorInterceptor: HttpInterceptorFn = (request, next) => {
   return next(request).pipe(catchError((error: unknown) => {
     if (error instanceof HttpErrorResponse
       && error.status === 401
+      && auth.token() !== null
       && !new URL(request.url, globalThis.location?.origin).pathname.endsWith('/auth/login')) {
       auth.cerrarSesion('expirada', router.url);
     }

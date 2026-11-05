@@ -1,5 +1,8 @@
 <div class="shell" [class.collapsed]="menuColapsado()">
   <app-header class="shell-header" (toggleMenu)="alternarMenu()" />
   <app-sidebar class="shell-sidebar" />
-  <main class="shell-main"><router-outlet /></main>
+  <main class="shell-main">
+    <app-aviso-sesion />
+    <router-outlet />
+  </main>
 </div>

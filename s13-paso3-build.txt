@@ -1,0 +1,33 @@
+> Building...
+√ Building...
+Initial chunk files | Names            |  Raw size | Estimated transfer size
+chunk-CoS_Klh9.js   | -                | 198.26 kB |                57.68 kB
+chunk-CkZH0Laf.js   | -                |  92.03 kB |                23.38 kB
+main-C7DR3MTK.js    | main             |  16.26 kB |                 4.88 kB
+styles-E6WR7BPR.css | styles           |   1.64 kB |               557 bytes
+chunk-D6aTU5l0.js   | -                |  56 bytes |                56 bytes
+
+                    | Initial total    | 308.26 kB |                86.54 kB
+
+Lazy chunk files    | Names            |  Raw size | Estimated transfer size
+chunk-1MPOfeAA.js   | -                |  50.41 kB |                10.27 kB
+chunk-Bd716TRv.js   | ventas-routes    |  42.11 kB |                10.21 kB
+chunk-DNkLhzVv.js   | producto-list    |  11.30 kB |                 3.27 kB
+chunk-C2SwdpkA.js   | cliente-list     |  10.82 kB |                 3.22 kB
+chunk-lvO83C9E.js   | producto-form    |   9.92 kB |                 3.19 kB
+chunk-CAy50Z2u.js   | ventas-categoria |   7.70 kB |                 2.74 kB
+chunk-BF3B4Z4b.js   | cliente-form     |   7.55 kB |                 2.45 kB
+chunk-jdckguOo.js   | categoria-list   |   7.21 kB |                 2.40 kB
+chunk-3e8B5h_4.js   | categoria-form   |   5.84 kB |                 2.09 kB
+chunk-B2mkrrxE.js   | login            |   5.54 kB |                 2.04 kB
+chunk-fH2GTspe.js   | inicio           |   3.69 kB |                 1.27 kB
+chunk-CHZwPc-O.js   | no-encontrado    | 904 bytes |               904 bytes
+chunk-BgFDABMf.js   | -                | 686 bytes |               686 bytes
+chunk-DCecdiVy.js   | -                | 651 bytes |               651 bytes
+chunk-DHGmgXoR.js   | -                | 630 bytes |               630 bytes
+...and 7 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [4.755 seconds] - 2026-11-05T14:37:29.246Z
+
+Output location: C:\Users\jatni\Downloads\pharma-frontend\dist\pharma-frontend
+

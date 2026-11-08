@@ -1,0 +1,101 @@
+{
+  "before": {
+    "initialBytes": 318190,
+    "initialFiles": [
+      "main-TSC4L75D.js",
+      "chunk-D384zYmb.js",
+      "chunk-BRTYZcTR.js",
+      "chunk-kiu1T7UI.js",
+      "styles-E6WR7BPR.css"
+    ],
+    "lazyJsChunks": 23,
+    "topInitialModules": [
+      {
+        "file": "node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs",
+        "bytesInOutput": 139534
+      },
+      {
+        "file": "node_modules/@angular/router/fesm2022/_router-chunk.mjs",
+        "bytesInOutput": 86572
+      },
+      {
+        "file": "node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs",
+        "bytesInOutput": 35115
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_module-chunk.mjs",
+        "bytesInOutput": 25137
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_common_module-chunk.mjs",
+        "bytesInOutput": 22229
+      }
+    ]
+  },
+  "after": {
+    "initialBytes": 306910,
+    "initialFiles": [
+      "main-VPYMPTTP.js",
+      "chunk-D384zYmb.js",
+      "chunk-BRTYZcTR.js",
+      "chunk-kiu1T7UI.js",
+      "styles-E6WR7BPR.css"
+    ],
+    "lazyJsChunks": 29,
+    "topInitialModules": [
+      {
+        "file": "node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs",
+        "bytesInOutput": 139534
+      },
+      {
+        "file": "node_modules/@angular/router/fesm2022/_router-chunk.mjs",
+        "bytesInOutput": 86572
+      },
+      {
+        "file": "node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs",
+        "bytesInOutput": 35115
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_module-chunk.mjs",
+        "bytesInOutput": 25137
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_common_module-chunk.mjs",
+        "bytesInOutput": 22229
+      }
+    ]
+  },
+  "preload": {
+    "initialBytes": 308847,
+    "initialFiles": [
+      "main-2E7G7XQO.js",
+      "chunk-D384zYmb.js",
+      "chunk-4-T1vHJ1.js",
+      "chunk-kiu1T7UI.js",
+      "styles-E6WR7BPR.css"
+    ],
+    "lazyJsChunks": 29,
+    "topInitialModules": [
+      {
+        "file": "node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs",
+        "bytesInOutput": 139534
+      },
+      {
+        "file": "node_modules/@angular/router/fesm2022/_router-chunk.mjs",
+        "bytesInOutput": 86655
+      },
+      {
+        "file": "node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs",
+        "bytesInOutput": 35115
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_module-chunk.mjs",
+        "bytesInOutput": 25137
+      },
+      {
+        "file": "node_modules/@angular/common/fesm2022/_common_module-chunk.mjs",
+        "bytesInOutput": 22229
+      }
+    ]
+  }
+}

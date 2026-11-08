@@ -25,6 +25,14 @@
               ],
               "outputHashing": "all"
             },
+            "preloading": {
+              "fileReplacements": [
+                {
+                  "replace": "src/app/core/routing/route-preloading.ts",
+                  "with": "src/app/core/routing/route-preloading.all.ts"
+                }
+              ]
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,

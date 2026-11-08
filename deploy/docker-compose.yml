@@ -16,7 +16,7 @@ services:
     ports:
       - "8081:80"
     volumes:
-      - ../dist/pharma-frontend/browser:/usr/share/nginx/html:ro
+      - ${SPA_DIST:-../dist/pharma-frontend/browser}:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     extra_hosts:
       - "backend:host-gateway"

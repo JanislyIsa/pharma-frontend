@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { MainLayout } from './layout/main-layout/main-layout';
 import { authGuard, invitadoGuard } from './core/guards/auth-guard';
 import { permisoGuard } from './core/guards/permiso-guard';
-import { AccesoDenegado } from './shared/pages/acceso-denegado/acceso-denegado';
 
 export const routes: Routes = [
   {
@@ -13,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: MainLayout,
+    loadComponent: () => import('./layout/main-layout/main-layout').then((m) => m.MainLayout),
     canActivate: [authGuard],
     canActivateChild: [authGuard],
     children: [
@@ -48,7 +46,11 @@ export const routes: Routes = [
         canActivate: [permisoGuard], data: { permiso: 'REPORTES_VER' },
         loadChildren: () => import('./features/reportes/reportes.routes').then((m) => m.REPORTES_ROUTES),
       },
-      { path: 'acceso-denegado', component: AccesoDenegado, title: 'Acceso denegado · PharmaSoft' },
+      {
+        path: 'acceso-denegado',
+        loadComponent: () => import('./shared/pages/acceso-denegado/acceso-denegado').then((m) => m.AccesoDenegado),
+        title: 'Acceso denegado · PharmaSoft',
+      },
     ],
   },
   {

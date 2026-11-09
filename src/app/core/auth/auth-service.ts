@@ -12,14 +12,17 @@ export class AuthService {
   private readonly http = inject(HttpClient);
   private readonly router = inject(Router);
   private readonly url = `${environment.apiUrl}/auth`;
+  private sesionExpiradaAlCargar = false;
   private readonly sesionActual = signal<Sesion | null>(this.leerSesionGuardada());
-  private temporizador?: ReturnType<typeof setTimeout>;
+  private temporizador?: ReturnType<typeof setInterval>;
 
   readonly sesion = this.sesionActual.asReadonly();
+  readonly segundosRestantes = signal(0);
   readonly autenticado = computed(() => {
     const sesion = this.sesionActual();
     return sesion !== null && Date.now() < sesion.expiraEn;
   });
+  readonly porVencer = computed(() => this.autenticado() && this.segundosRestantes() <= 120);
 
   constructor() {
     const sesion = this.sesionActual();
@@ -41,8 +44,9 @@ export class AuthService {
   }
 
   cerrarSesion(motivo?: 'expirada', volverA?: string): void {
-    if (this.temporizador) clearTimeout(this.temporizador);
+    if (this.temporizador) clearInterval(this.temporizador);
     this.temporizador = undefined;
+    this.segundosRestantes.set(0);
     sessionStorage.removeItem(CLAVE_SESION);
     this.sesionActual.set(null);
 
@@ -59,6 +63,10 @@ export class AuthService {
     return sesion && Date.now() < sesion.expiraEn ? sesion.token : null;
   }
 
+  huboSesionExpiradaAlCargar(): boolean {
+    return this.sesionExpiradaAlCargar;
+  }
+
   tienePermiso(permiso: Permiso): boolean {
     return this.sesionActual()?.permisos.includes(permiso) ?? false;
   }
@@ -70,16 +78,16 @@ export class AuthService {
   }
 
   private programarExpiracion(sesion: Sesion): void {
-    if (this.temporizador) clearTimeout(this.temporizador);
-    const restante = sesion.expiraEn - Date.now();
-    if (restante <= 0) {
-      this.cerrarSesion('expirada', this.router.url);
-      return;
+    if (this.temporizador) clearInterval(this.temporizador);
+    const actualizar = () => {
+      const restante = Math.max(0, Math.ceil((sesion.expiraEn - Date.now()) / 1000));
+      this.segundosRestantes.set(restante);
+      if (restante === 0) this.cerrarSesion('expirada', this.router.url);
+    };
+    actualizar();
+    if (this.sesionActual() === sesion) {
+      this.temporizador = setInterval(actualizar, 1000);
     }
-    this.temporizador = setTimeout(
-      () => this.cerrarSesion('expirada', this.router.url),
-      restante,
-    );
   }
 
   private leerSesionGuardada(): Sesion | null {
@@ -88,6 +96,7 @@ export class AuthService {
       if (!texto) return null;
       const sesion = JSON.parse(texto) as Sesion;
       if (!sesion.token || !Number.isFinite(sesion.expiraEn) || Date.now() >= sesion.expiraEn) {
+        this.sesionExpiradaAlCargar = Date.now() >= sesion.expiraEn;
         sessionStorage.removeItem(CLAVE_SESION);
         return null;
       }

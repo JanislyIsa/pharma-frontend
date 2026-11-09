@@ -40,6 +40,9 @@ export class Login {
       },
       error: (err: HttpErrorResponse) => {
         this.error.set(mensajeError(err));
+        // Nunca conservar una contraseña enviada al servidor tras un intento fallido.
+        this.form.controls.password.reset('');
+        this.form.controls.password.markAsUntouched();
         this.enviando.set(false);
       },
     });

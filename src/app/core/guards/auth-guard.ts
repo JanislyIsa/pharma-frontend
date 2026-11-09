@@ -5,7 +5,9 @@ import { AuthService } from '../auth/auth-service';
 export const authGuard: CanActivateFn = (_route, state) => {
   const auth = inject(AuthService);
   if (auth.autenticado() && auth.token()) return true;
-  return inject(Router).createUrlTree(['/login'], { queryParams: { returnUrl: state.url } });
+  const queryParams: Record<string, string> = { returnUrl: state.url };
+  if (auth.huboSesionExpiradaAlCargar()) queryParams['expirada'] = '1';
+  return inject(Router).createUrlTree(['/login'], { queryParams });
 };
 
 export const invitadoGuard: CanActivateFn = () => {

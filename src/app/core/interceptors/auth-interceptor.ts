@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment';
 import { AuthService } from '../auth/auth-service';
 
 export const authInterceptor: HttpInterceptorFn = (request, next) => {
-  const urlApi = new URL(environment.apiUrl);
+  const urlApi = new URL(environment.apiUrl, globalThis.location?.origin);
   const urlRequest = new URL(request.url, globalThis.location?.origin ?? urlApi.origin);
   const vaALaApi = urlRequest.origin === urlApi.origin
     && (urlRequest.pathname === urlApi.pathname || urlRequest.pathname.startsWith(`${urlApi.pathname}/`));

@@ -1,0 +1,36 @@
+> Building...
+√ Building...
+Initial chunk files | Names            |  Raw size | Estimated transfer size
+chunk-D384zYmb.js   | -                | 208.38 kB |                60.74 kB
+chunk-BRTYZcTR.js   | -                |  91.85 kB |                23.38 kB
+main-VPYMPTTP.js    | main             |   4.99 kB |                 1.86 kB
+styles-E6WR7BPR.css | styles           |   1.64 kB |               557 bytes
+chunk-kiu1T7UI.js   | -                |  54 bytes |                54 bytes
+
+                    | Initial total    | 306.91 kB |                86.58 kB
+
+Lazy chunk files    | Names            |  Raw size | Estimated transfer size
+chunk-CTCcvUU0.js   | -                |  50.30 kB |                10.26 kB
+chunk-CiSmdN7N.js   | venta-form       |  18.31 kB |                 5.25 kB
+chunk-Dq33WttF.js   | venta-list       |  12.21 kB |                 3.90 kB
+chunk-sv1ejybV.js   | venta-detalle    |  11.68 kB |                 3.63 kB
+chunk-hAx82fSt.js   | producto-list    |  11.30 kB |                 3.28 kB
+chunk-5sUrEA2K.js   | cliente-list     |  10.82 kB |                 3.22 kB
+chunk-cLX9lxxy.js   | main-layout      |  10.31 kB |                 3.04 kB
+chunk-usrl6XHB.js   | producto-form    |   9.92 kB |                 3.19 kB
+chunk-Cq6wpG9h.js   | ventas-categoria |   7.71 kB |                 2.74 kB
+chunk-B-eNDuJO.js   | cliente-form     |   7.55 kB |                 2.45 kB
+chunk-DltI9-4d.js   | categoria-list   |   7.21 kB |                 2.40 kB
+chunk-S-_9S2d6.js   | categoria-form   |   5.84 kB |                 2.09 kB
+chunk-CDiAoLEq.js   | login            |   5.53 kB |                 2.02 kB
+chunk-LhXyAEq3.js   | inicio           |   4.38 kB |                 1.59 kB
+chunk-CaX_i9to.js   | mas-vendidos     |   1.90 kB |               955 bytes
+...and 14 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [5.257 seconds] - 2026-11-08T21:17:35.736Z
+
+▲ [WARNING] src/app/features/ventas/pages/venta-form/venta-form.css exceeded maximum budget. Budget 4.00 kB was not met by 57 bytes with a total of 4.06 kB.
+
+
+Output location: C:\Users\jatni\Downloads\pharma-frontend\dist\pharma-frontend
+

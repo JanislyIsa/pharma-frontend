@@ -1,0 +1,58 @@
+{
+  "anon": {
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "UP"
+  },
+  "admin": {
+    "components": {
+      "db": {
+        "details": {
+          "database": "Oracle",
+          "validationQuery": "isValid()"
+        },
+        "status": "UP"
+      },
+      "diskSpace": {
+        "details": {
+          "total": 482420789248,
+          "free": 44743536640,
+          "threshold": 10485760,
+          "path": "C:\\Users\\jatni\\Downloads\\pharmaSoft-main\\.",
+          "exists": true
+        },
+        "status": "UP"
+      },
+      "livenessState": {
+        "status": "UP"
+      },
+      "ping": {
+        "status": "UP"
+      },
+      "readinessState": {
+        "status": "UP"
+      },
+      "redis": {
+        "details": {
+          "version": "7.4.12"
+        },
+        "status": "UP"
+      },
+      "ssl": {
+        "details": {
+          "expiringChains": [],
+          "invalidChains": [],
+          "validChains": []
+        },
+        "status": "UP"
+      }
+    },
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "UP"
+  }
+}

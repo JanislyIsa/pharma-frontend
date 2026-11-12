@@ -1,0 +1,7 @@
+.session-warning { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 18px; padding: 13px 16px; border: 1px solid #f1d287; border-radius: 10px; background: #fff6dd; color: #684700; }
+.actions { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
+button { border: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+.close-session { font-weight: 700; text-decoration: underline; }
+.dismiss { width: 28px; height: 28px; border-radius: 6px; font-size: 22px; line-height: 1; }
+.dismiss:hover { background: rgb(104 71 0 / 10%); }
+@media (max-width: 600px) { .session-warning { align-items: flex-start; flex-direction: column; } }

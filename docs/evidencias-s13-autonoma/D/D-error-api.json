@@ -1,0 +1,26 @@
+{
+  "response": {
+    "timestamp": "2026-11-08T18:43:58.1418695",
+    "status": 404,
+    "error": "Not Found",
+    "message": "Producto no encontrado con id: 999999999",
+    "path": "/api/v1/productos/999999999",
+    "validationErrors": null,
+    "requestId": "06b3a9bc"
+  },
+  "headers": {
+    "X-Request-Id": "06b3a9bc",
+    "Vary": "Origin",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "0",
+    "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+    "Pragma": "no-cache",
+    "Expires": "0",
+    "X-Frame-Options": "DENY",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Date": "Sun, 08 Nov 2026 23:43:58 GMT",
+    "Connection": "close"
+  },
+  "matched": true
+}

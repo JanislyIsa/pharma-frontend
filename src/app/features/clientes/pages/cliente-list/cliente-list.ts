@@ -4,10 +4,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Cliente } from '../../models/cliente.model';
 import { ClienteService } from '../../services/cliente-service';
 import { mensajeError } from '../../../../core/utils/http-error';
+import { SiPermiso } from '../../../../shared/directives/si-permiso';
 
 @Component({
   selector: 'app-cliente-list',
-  imports: [RouterLink],
+  imports: [RouterLink, SiPermiso],
   templateUrl: './cliente-list.html',
   styleUrl: './cliente-list.css',
 })
@@ -81,3 +82,4 @@ export class ClienteList implements OnInit {
     });
   }
 }
+

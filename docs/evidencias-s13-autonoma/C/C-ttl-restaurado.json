@@ -1,0 +1,6 @@
+{
+  "instanciaNormal": 8080,
+  "redisDB": 0,
+  "ttlSeconds": 600,
+  "configFuente": "${CACHE_TTL:10m}"
+}

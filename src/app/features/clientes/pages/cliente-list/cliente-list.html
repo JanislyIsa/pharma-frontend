@@ -1,6 +1,6 @@
 <section class="page-heading">
   <div><p class="eyebrow">RELACIONES</p><h1>Clientes</h1><p class="subheading">Consulta y mantén actualizada la información de tus clientes.</p></div>
-  <a class="button button-primary" routerLink="nuevo"><span>＋</span> Nuevo cliente</a>
+  <a *appSiPermiso="'CLIENTES_ESCRIBIR'" class="button button-primary" routerLink="nuevo"><span>＋</span> Nuevo cliente</a>
 </section>
 @if (error()) { <div class="alert" role="alert"><span>{{ error() }}</span><button type="button" (click)="cargar()">Reintentar</button></div> }
 <section class="panel">
@@ -14,10 +14,10 @@
     <div class="table-wrap"><table><thead><tr>
       <th><button type="button" class="sort" (click)="ordenar('dni')">DNI <span>{{ ordenarPor() === 'dni' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
       <th><button type="button" class="sort" (click)="ordenar('apellidos')">Apellidos y nombres <span>{{ ordenarPor() === 'apellidos' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
-      <th>Correo</th><th>Teléfono</th><th>Estado</th><th class="actions-col">Acciones</th>
+      <th>Correo</th><th>Teléfono</th><th>Estado</th><th *appSiPermiso="'CLIENTES_ESCRIBIR'" class="actions-col">Acciones</th>
     </tr></thead><tbody>
       @for (cliente of filtrados(); track cliente.id) {
-        <tr><td class="mono">{{ cliente.dni }}</td><td class="primary-cell">{{ cliente.apellidos }}, {{ cliente.nombres }}</td><td>{{ cliente.email }}</td><td>{{ cliente.telefono || '—' }}</td><td><span class="badge" [class.inactive]="!cliente.estado">{{ cliente.estado ? 'Activo' : 'Inactivo' }}</span></td><td class="actions-col"><a class="text-action" [routerLink]="[cliente.id, 'editar']">Editar</a><button class="text-action danger" type="button" (click)="darDeBaja(cliente)">Dar de baja</button></td></tr>
+        <tr><td class="mono">{{ cliente.dni }}</td><td class="primary-cell">{{ cliente.apellidos }}, {{ cliente.nombres }}</td><td>{{ cliente.email }}</td><td>{{ cliente.telefono || '—' }}</td><td><span class="badge" [class.inactive]="!cliente.estado">{{ cliente.estado ? 'Activo' : 'Inactivo' }}</span></td><td *appSiPermiso="'CLIENTES_ESCRIBIR'" class="actions-col"><a class="text-action" [routerLink]="[cliente.id, 'editar']">Editar</a><button class="text-action danger" type="button" (click)="darDeBaja(cliente)">Dar de baja</button></td></tr>
       }
     </tbody></table></div>
   }

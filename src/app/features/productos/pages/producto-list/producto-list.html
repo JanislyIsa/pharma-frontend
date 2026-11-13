@@ -15,34 +15,28 @@
   <div class="toolbar">
     <label class="filter">Categoría
       <select class="select" (change)="filtrarPorCategoria($any($event.target).value)">
-        <option value="">Todas</option>
+        <option value="" [selected]="categoriaId() === null">Todas</option>
         @for (categoria of categorias(); track categoria.id) {
-          <option [value]="categoria.id">{{ categoria.nombre }}{{ categoria.estado ? '' : ' (inactiva)' }}</option>
+          <option [value]="categoria.id" [selected]="categoriaId() === categoria.id">{{ categoria.nombre }}{{ categoria.estado ? '' : ' (inactiva)' }}</option>
         }
-      </select>
-    </label>
-    <label class="page-size">Filas
-      <select class="select" [value]="tamanio()" (change)="cambiarTamanio($any($event.target).value)">
-        <option value="5">5</option><option value="10">10</option><option value="20">20</option>
       </select>
     </label>
   </div>
 
-  @if (cargando()) {
-    <div class="state">Cargando productos…</div>
-  } @else if (productos().length === 0) {
+  @if (cargando()) { <p role="status">Cargando productos…</p> }
+  @if (!cargando() && productos().length === 0 && !error()) {
     <div class="state">
-      <strong>{{ categoriaFiltro() !== null ? 'No hay productos en esta página para la categoría' : 'Todavía no hay productos' }}</strong>
-      <span>{{ categoriaFiltro() !== null ? 'El filtro solo se aplica a los productos de la página actual.' : 'Registra un producto para comenzar.' }}</span>
+      <strong>{{ categoriaId() !== null ? 'No hay productos en esta página para la categoría' : 'Todavía no hay productos' }}</strong>
+      <span>{{ categoriaId() !== null ? 'El filtro solo se aplica a los productos de la página actual.' : 'Registra un producto para comenzar.' }}</span>
     </div>
-  } @else {
+  } @else if (resultado() && !error()) {
     <div class="table-wrap">
-      <table>
+      <table data-testid="tabla-productos" [attr.aria-busy]="cargando()">
         <thead><tr>
-          <th><button type="button" class="sort" (click)="ordenar('nombre')">Nombre <span>{{ ordenarPor() === 'nombre' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
+          <th><button type="button" class="sort" (click)="ordenar('nombre')">Nombre <span>{{ orden() === 'nombre' ? (dir() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
           <th>Categoría</th>
-          <th><button type="button" class="sort" (click)="ordenar('precio')">Precio <span>{{ ordenarPor() === 'precio' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
-          <th><button type="button" class="sort" (click)="ordenar('stock')">Stock <span>{{ ordenarPor() === 'stock' ? (direccion() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
+          <th><button type="button" class="sort" (click)="ordenar('precio')">Precio <span>{{ orden() === 'precio' ? (dir() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
+          <th><button type="button" class="sort" (click)="ordenar('stock')">Stock <span>{{ orden() === 'stock' ? (dir() === 'asc' ? '↑' : '↓') : '↕' }}</span></button></th>
           <th>Estado</th><th *appSiPermiso="'CATALOGO_ESCRIBIR'" class="actions-col">Acciones</th>
         </tr></thead>
         <tbody>
@@ -65,13 +59,9 @@
   }
 
   @if (resultado(); as r) {
-    <footer class="pagination">
-      <span>Página {{ r.pagina + 1 }} de {{ r.totalPaginas || 1 }} · {{ r.totalElementos }} productos</span>
-      <div>
-        <button type="button" class="page-button" [disabled]="r.pagina === 0 || cargando()" (click)="irA(r.pagina - 1)">← Anterior</button>
-        <button type="button" class="page-button" [disabled]="r.ultima || cargando()" (click)="irA(r.pagina + 1)">Siguiente →</button>
-      </div>
-    </footer>
+    <app-paginador [pagina]="r.pagina" [totalPaginas]="r.totalPaginas" [totalElementos]="r.totalElementos"
+      [tamanio]="r.tamanio" [deshabilitado]="cargando()"
+      (cambioPagina)="irA($event)" (cambioTamanio)="cambiarTamanio($event)" />
   }
 </section>
 

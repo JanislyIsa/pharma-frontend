@@ -46,6 +46,7 @@ export const routes: Routes = [
         canActivate: [permisoGuard], data: { permiso: 'REPORTES_VER' },
         loadChildren: () => import('./features/reportes/reportes.routes').then((m) => m.REPORTES_ROUTES),
       },
+      { path: 'auditoria', title: 'Auditoría · PharmaSoft', canActivate: [permisoGuard], data: { permiso: 'USUARIOS_ADMINISTRAR' }, loadComponent: () => import('./features/auditoria/auditoria').then(m => m.Auditoria) },
       {
         path: 'acceso-denegado',
         loadComponent: () => import('./shared/pages/acceso-denegado/acceso-denegado').then((m) => m.AccesoDenegado),

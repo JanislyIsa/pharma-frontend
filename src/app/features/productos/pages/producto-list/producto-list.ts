@@ -1,94 +1,104 @@
 import { CurrencyPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { PaginaResponse } from '../../../../core/models/pagina-response';
+import { Component, computed, effect, inject, input, linkedSignal, signal } from '@angular/core';
+import { rxResource, takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Router, RouterLink } from '@angular/router';
+import { Pagina } from '../../../../core/models/pagina';
 import { mensajeError } from '../../../../core/utils/http-error';
+import { direccionDesdeUrl, idDesdeUrl, paginaDesdeUrl, tamanioDesdeUrl } from '../../../../core/utils/paginacion-url';
+import { Paginador } from '../../../../shared/components/paginador/paginador';
+import { SiPermiso } from '../../../../shared/directives/si-permiso';
 import { Categoria } from '../../../categorias/models/categoria.model';
 import { CategoriaService } from '../../../categorias/services/categoria-service';
-import { Direccion, OrdenProducto, Producto } from '../../models/producto.model';
+import { OrdenProducto, Producto } from '../../models/producto.model';
 import { ProductoService } from '../../services/producto-service';
-import { SiPermiso } from '../../../../shared/directives/si-permiso';
+
+function ordenDesdeUrl(valor: unknown): OrdenProducto {
+  return valor === 'id' || valor === 'precio' || valor === 'stock' ? valor : 'nombre';
+}
 
 @Component({
   selector: 'app-producto-list',
-  imports: [RouterLink, CurrencyPipe, SiPermiso],
+  imports: [RouterLink, CurrencyPipe, SiPermiso, Paginador],
   templateUrl: './producto-list.html',
   styleUrl: './producto-list.css',
 })
-export class ProductoList implements OnInit {
+export class ProductoList {
   private readonly productoService = inject(ProductoService);
   private readonly categoriaService = inject(CategoriaService);
-
-  protected readonly pagina = signal(0);
-  protected readonly tamanio = signal(10);
-  protected readonly ordenarPor = signal<OrdenProducto>('nombre');
-  protected readonly direccion = signal<Direccion>('asc');
-  protected readonly resultado = signal<PaginaResponse<Producto> | null>(null);
+  private readonly router = inject(Router);
+  readonly pagina = input(0, { transform: paginaDesdeUrl });
+  readonly tamanio = input(20, { transform: tamanioDesdeUrl });
+  readonly orden = input('nombre', { transform: ordenDesdeUrl });
+  readonly dir = input('asc', { transform: direccionDesdeUrl });
+  readonly categoriaId = input(null, { transform: idDesdeUrl });
   protected readonly categorias = signal<Categoria[]>([]);
-  protected readonly categoriaFiltro = signal<number | null>(null);
-  protected readonly cargando = signal(true);
-  protected readonly error = signal('');
-
+  private readonly errorCategorias = signal('');
+  private readonly consulta = rxResource({
+    params: () => ({
+      pagina: this.pagina(), tamanio: this.tamanio(),
+      ordenarPor: this.orden(), direccion: this.dir(),
+    }),
+    stream: ({ params }) => this.productoService.listar(params),
+  });
+  protected readonly resultado = linkedSignal<Pagina<Producto> | undefined, Pagina<Producto> | undefined>({
+    source: () => this.consulta.hasValue() ? this.consulta.value() : undefined,
+    computation: (nueva, previa) => nueva ?? previa?.value,
+  });
+  protected readonly cargando = this.consulta.isLoading;
+  protected readonly error = computed(() => {
+    const fallo = this.consulta.error();
+    if (fallo instanceof HttpErrorResponse) return mensajeError(fallo);
+    return fallo ? 'No se pudieron cargar los productos.' : this.errorCategorias();
+  });
   protected readonly productos = computed(() => {
     const lista = this.resultado()?.contenido ?? [];
-    const categoriaId = this.categoriaFiltro();
-    return categoriaId === null ? lista : lista.filter((producto) => producto.categoriaId === categoriaId);
+    return this.categoriaId() === null ? lista : lista.filter(producto => producto.categoriaId === this.categoriaId());
   });
 
-  ngOnInit(): void {
-    this.categoriaService.listar().subscribe({
-      next: (categorias) => this.categorias.set(categorias),
-      error: (err: HttpErrorResponse) => this.error.set(mensajeError(err)),
+  constructor() {
+    this.categoriaService.listar().pipe(takeUntilDestroyed()).subscribe({
+      next: categorias => this.categorias.set(categorias),
+      error: (err: HttpErrorResponse) => this.errorCategorias.set(mensajeError(err)),
     });
-    this.cargar();
+    effect(() => {
+      if (!this.consulta.hasValue()) return;
+      const respuesta = this.consulta.value();
+      const ultima = Math.max(0, respuesta.totalPaginas - 1);
+      if (respuesta.pagina > ultima) this.navegar({ pagina: ultima }, true);
+    });
   }
 
   cargar(): void {
-    this.cargando.set(true);
-    this.error.set('');
-    this.productoService.listar(this.pagina(), this.tamanio(), this.ordenarPor(), this.direccion()).subscribe({
-      next: (resultado) => {
-        this.resultado.set(resultado);
-        this.cargando.set(false);
-      },
-      error: (err: HttpErrorResponse) => {
-        this.error.set(mensajeError(err));
-        this.cargando.set(false);
-      },
-    });
+    this.consulta.reload();
   }
 
-  cambiarTamanio(valor: string): void {
-    this.tamanio.set(Number(valor));
-    this.irA(0);
+  cambiarTamanio(tamanio: number): void {
+    this.navegar({ tamanio, pagina: 0 });
   }
 
   ordenar(campo: OrdenProducto): void {
-    if (this.ordenarPor() === campo) {
-      this.direccion.update((actual) => actual === 'asc' ? 'desc' : 'asc');
-    } else {
-      this.ordenarPor.set(campo);
-      this.direccion.set('asc');
-    }
-    this.irA(0);
+    const dir = this.orden() === campo && this.dir() === 'asc' ? 'desc' : 'asc';
+    this.navegar({ orden: campo, dir, pagina: 0 });
   }
 
   filtrarPorCategoria(valor: string): void {
-    this.categoriaFiltro.set(valor ? Number(valor) : null);
+    this.navegar({ categoriaId: idDesdeUrl(valor), pagina: 0 });
   }
 
   irA(pagina: number): void {
-    this.pagina.set(pagina);
-    this.cargar();
+    this.navegar({ pagina });
+  }
+
+  private navegar(cambios: Record<string, string | number | null>, replaceUrl = false): void {
+    void this.router.navigate([], { queryParams: cambios, queryParamsHandling: 'merge', replaceUrl });
   }
 
   darDeBaja(producto: Producto): void {
-    if (!window.confirm(`¿Dar de baja el producto «${producto.nombre}»?`)) return;
+    if (!window.confirm('¿Dar de baja el producto «' + producto.nombre + '»?')) return;
     this.productoService.darDeBaja(producto.id).subscribe({
       next: () => this.cargar(),
-      error: (err: HttpErrorResponse) => this.error.set(mensajeError(err)),
+      error: (err: HttpErrorResponse) => this.errorCategorias.set(mensajeError(err)),
     });
   }
 }
-

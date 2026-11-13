@@ -31,22 +31,16 @@
       <button class="button" type="button" (click)="limpiar()">Limpiar</button>
       <button class="button button-primary" type="submit">Buscar</button>
     </div>
-    <label class="page-size">Filas
-      <select class="input" [value]="tamanio" (change)="cambiarTamanio($any($event.target).value)">
-        <option value="5">5</option><option value="10">10</option><option value="20">20</option>
-      </select>
-    </label>
   </form>
 
-  @if (error()) { <div class="alert" role="alert">{{ error() }} <button type="button" (click)="buscar()">Reintentar</button></div> }
+  @if (error()) { <div class="alert" role="alert">{{ error() }} <button type="button" (click)="reintentar()">Reintentar</button></div> }
 
   <section class="sales-card">
-    @if (cargando()) {
-      <div class="state">Buscando ventas…</div>
-    } @else if (resultado(); as pagina) {
+    @if (cargando()) { <p role="status">Buscando ventas…</p> }
+    @if (resultado(); as pagina) {
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>N.º</th><th>Fecha</th><th>Cliente</th><th>Ítems</th><th class="amount">Total</th><th>Estado</th><th class="no-imprimir">Acciones</th></tr></thead>
+        <table data-testid="tabla-ventas" [attr.aria-busy]="cargando()">
+          <thead><tr><th>N.º</th><th><button class="detail-link" type="button" (click)="ordenarFecha()">Fecha {{ dir() === 'asc' ? '↑' : '↓' }}</button></th><th>Cliente</th><th>Ítems</th><th class="amount">Total</th><th>Estado</th><th class="no-imprimir">Acciones</th></tr></thead>
           <tbody>
             @for (venta of pagina.contenido; track venta.id) {
               <tr>
@@ -67,14 +61,10 @@
           </tbody>
         </table>
       </div>
-      <footer class="pagination">
-        <span class="only-print">Total registrado en la página (sin anuladas): {{ totalPagina() | currency:'PEN':'S/ ':'1.2-2' }} · </span>
-        <span>Página {{ pagina.pagina + 1 }} de {{ pagina.totalPaginas || 1 }} · {{ pagina.totalElementos }} ventas</span>
-        <div class="no-imprimir">
-          <button class="button" type="button" [disabled]="pagina.pagina === 0" (click)="irA(pagina.pagina - 1)">← Anterior</button>
-          <button class="button" type="button" [disabled]="pagina.ultima" (click)="irA(pagina.pagina + 1)">Siguiente →</button>
-        </div>
-      </footer>
+      <p class="only-print">Total registrado en la página (sin anuladas): {{ totalPagina() | currency:'PEN':'S/ ':'1.2-2' }}</p>
+      <app-paginador [pagina]="pagina.pagina" [totalPaginas]="pagina.totalPaginas"
+        [totalElementos]="pagina.totalElementos" [tamanio]="pagina.tamanio" [deshabilitado]="cargando()"
+        (cambioPagina)="irA($event)" (cambioTamanio)="cambiarTamanio($event)" />
     }
   </section>
 </section>

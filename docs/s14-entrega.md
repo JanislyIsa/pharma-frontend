@@ -22,4 +22,4 @@ Para E2E definir las tres variables de contraseña descritas en `e2e/README.md`,
 npm.cmd run e2e:estable
 ```
 
-La publicación y los PR hacia develop están preparados y pendientes de autorización explícita. No se fusionó ninguna rama.
+Ramas publicadas y PR abiertos hacia `develop`: [backend #4](https://github.com/JanislyIsa/pharmaSoft/pull/4) y [frontend #5](https://github.com/JanislyIsa/pharma-frontend/pull/5).

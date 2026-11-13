@@ -4,7 +4,7 @@ Rama local: `feature/integracion-estabilizacion-suarez`, creada desde `origin/de
 
 ## Paso 1. Crear las ramas de trabajo
 
-La rama está creada en los dos repositorios. Los cambios todavía no se han publicado en GitHub.
+La rama está creada en los dos repositorios. Las ramas se publicaron el 13/11/2026: backend PR #4 y frontend PR #5 hacia develop.
 
 ## Paso 2. Cargar volumen de prueba y medir la línea base
 

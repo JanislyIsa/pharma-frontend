@@ -4,6 +4,7 @@ Requieren Oracle local, Redis y backend en `http://localhost:8080` con V4 aplica
 Definir `E2E_ADMIN_PASSWORD`, `E2E_VENDEDOR_PASSWORD` y `E2E_ALMACEN_PASSWORD` en la sesión, sin guardarlas en Git.
 
 ```powershell
+npx.cmd playwright install chromium
 npm.cmd run e2e
 npm.cmd run e2e:estable
 npx.cmd playwright show-report

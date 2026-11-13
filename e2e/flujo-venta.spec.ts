@@ -12,12 +12,15 @@ test('flujo integrado: cliente, catálogo, venta, stock, reportes y auditoría',
     dni: marca.slice(-8), nombres: 'S14', apellidos: `E2E${marca}`, email: `s14-${marca}@example.test`, estado: true,
   }});
   expect(clienteR.status()).toBe(201); const cliente = await clienteR.json(); expect(cliente.creadoPor).toBe('admin');
-  const datos = { nombre: `AA S14 E2E ${marca}`, precio: 12.5, stock: 20, estado: true, categoriaId };
+  const datos = { nombre: `AAAAS14 E2E ${9999999999999 - Date.now()}-${info.repeatEachIndex}`, precio: 12.5, stock: 20, estado: true, categoriaId };
   const productoR = await request.post(API + '/productos', { headers, data: datos });
   expect(productoR.status()).toBe(201); const producto = await productoR.json(); expect(producto.creadoPor).toBe('admin');
   for (const variante of [{ nombre: datos.nombre + ' agotado', stock: 0, estado: true }, { nombre: datos.nombre + ' inactivo', stock: 20, estado: false }]) {
     expect((await request.post(API + '/productos', { headers, data: { ...datos, ...variante } })).status()).toBe(201);
   }
+  const busquedaCategoria = await request.get(API + '/productos/buscar?texto=' + encodeURIComponent(categoria.nombre), { headers });
+  expect(busquedaCategoria.status()).toBe(200);
+  expect((await busquedaCategoria.json()).contenido.map((p: any) => p.id)).toEqual([producto.id]);
   // Calienta la caché del catálogo antes de vender para comprobar su invalidación real.
   expect((await request.get(API + '/productos?pagina=0&tamanio=20', { headers })).status()).toBe(200);
   const errores: string[] = []; const quinientos: string[] = [];

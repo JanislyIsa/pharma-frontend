@@ -1,4 +1,6 @@
 export interface Producto {
+  creadoPor?: string | null;
+  modificadoPor?: string | null;
   id: number;
   nombre: string;
   precio: number;

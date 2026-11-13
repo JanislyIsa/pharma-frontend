@@ -1,4 +1,5 @@
 <section class="form-page">
+  @if (autoria()) { <p data-testid="autoria">{{ autoria() }}</p> }
   <a class="back-link" routerLink="/productos">← Volver a productos</a>
   <div class="form-heading">
     <p class="eyebrow">CATÁLOGO</p>

@@ -1,0 +1,1763 @@
+{
+  "fecha": "2026-11-05T11:20:36.702235",
+  "checks": [
+    {
+      "name": "12. Health público sin detalles",
+      "passed": true,
+      "detail": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "name": "Health admin con Oracle y Redis",
+      "passed": true,
+      "detail": {
+        "components": {
+          "db": {
+            "details": {
+              "database": "Oracle",
+              "validationQuery": "isValid()"
+            },
+            "status": "UP"
+          },
+          "diskSpace": {
+            "details": {
+              "total": 482420789248,
+              "free": 41501843456,
+              "threshold": 10485760,
+              "path": "C:\\Users\\jatni\\Downloads\\pharmaSoft-main\\.",
+              "exists": true
+            },
+            "status": "UP"
+          },
+          "livenessState": {
+            "status": "UP"
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "readinessState": {
+            "status": "UP"
+          },
+          "redis": {
+            "details": {
+              "version": "7.4.12"
+            },
+            "status": "UP"
+          },
+          "ssl": {
+            "details": {
+              "expiringChains": [],
+              "invalidChains": [],
+              "validChains": []
+            },
+            "status": "UP"
+          }
+        },
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "name": "Métricas admin autorizadas",
+      "passed": true,
+      "detail": {
+        "availableTags": [
+          {
+            "tag": "exception",
+            "values": [
+              "none"
+            ]
+          },
+          {
+            "tag": "method",
+            "values": [
+              "POST",
+              "GET"
+            ]
+          },
+          {
+            "tag": "error",
+            "values": [
+              "none"
+            ]
+          },
+          {
+            "tag": "uri",
+            "values": [
+              "/actuator/health",
+              "/api/v1/auth/login"
+            ]
+          },
+          {
+            "tag": "outcome",
+            "values": [
+              "CLIENT_ERROR",
+              "SUCCESS"
+            ]
+          },
+          {
+            "tag": "status",
+            "values": [
+              "400",
+              "200"
+            ]
+          }
+        ],
+        "baseUnit": "seconds",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 6.0
+          },
+          {
+            "statistic": "TOTAL_TIME",
+            "value": 1.4488327
+          },
+          {
+            "statistic": "MAX",
+            "value": 0.5281555
+          }
+        ],
+        "name": "http.server.requests"
+      }
+    },
+    {
+      "name": "13. Métricas vendedor bloqueadas",
+      "passed": true,
+      "detail": {
+        "status": 403
+      }
+    },
+    {
+      "name": "7. Categorías almacenadas con TTL",
+      "passed": true,
+      "detail": {
+        "primeraMs": 121.19,
+        "segundaMs": 39.69,
+        "exists": "1",
+        "ttl": 599
+      }
+    },
+    {
+      "name": "Aciertos Redis publicados en Actuator",
+      "passed": true,
+      "detail": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "cache",
+            "values": [
+              "categorias"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 1.0
+          }
+        ],
+        "name": "cache.gets"
+      }
+    },
+    {
+      "name": "8. Crear categoría invalida y recarga",
+      "passed": true,
+      "detail": {
+        "categoriaId": 141,
+        "existsTrasCrear": "0",
+        "existsTrasListar": "1"
+      }
+    },
+    {
+      "name": "9. Venta invalida stock cacheado",
+      "passed": true,
+      "detail": {
+        "productoPruebaId": 101,
+        "ventaPruebaId": 141,
+        "stockAntes": 5,
+        "stockDespues": 4,
+        "cacheTrasVenta": "0"
+      }
+    },
+    {
+      "name": "Actualizar categoría refresca nombre en producto",
+      "passed": true,
+      "detail": {
+        "categoriaNombre": "S13 Suarez 1105112039 Edit"
+      }
+    },
+    {
+      "name": "11. X-Request-Id coincide con log",
+      "passed": true,
+      "detail": {
+        "requestId": "07da5a83",
+        "log": [
+          "2026-11-05 11:20:41,490 INFO  [07da5a83] p.e.p.P.s.impl.CategoriaServiceImpl - Inicio listar categorias",
+          "2026-11-05 11:20:41,495 INFO  [07da5a83] p.e.p.P.s.impl.CategoriaServiceImpl - Fin listar categorias | duracionMs=4",
+          "2026-11-05 11:20:41,497 INFO  [07da5a83] p.e.p.P.config.RequestIdFilter - GET /api/v1/categorias -> 200 (21 ms)"
+        ]
+      }
+    },
+    {
+      "name": "10. Redis detenido: Oracle responde y health DOWN",
+      "passed": true,
+      "detail": {
+        "categoriasStatus": 200,
+        "healthStatus": 503,
+        "health": {
+          "groups": [
+            "liveness",
+            "readiness"
+          ],
+          "status": "DOWN"
+        },
+        "warn": [
+          "2026-11-05 11:20:43,126 WARN  [783dd4ea] p.e.p.P.config.CacheConfig - Cache categorias no disponible al leer todas | Redis command timed out"
+        ]
+      }
+    },
+    {
+      "name": "Redis restaurado y health UP",
+      "passed": true,
+      "detail": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "name": "14. Log de producción sin password ni Bearer",
+      "passed": true,
+      "detail": {
+        "archivo": "logs/pharma-backend.log",
+        "bytes": 21262
+      }
+    },
+    {
+      "name": "4. JS con caché anual e immutable",
+      "passed": true,
+      "detail": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "application/javascript",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "W/\"6aec96ce-3f8b\"",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Content-Encoding": "gzip"
+      }
+    },
+    {
+      "name": "5. index.html siempre se revalida",
+      "passed": true,
+      "detail": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "1162",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "\"6aec96ce-48a\"",
+        "Cache-Control": "no-cache",
+        "Accept-Ranges": "bytes"
+      }
+    },
+    {
+      "name": "Gzip habilitado para JavaScript",
+      "passed": true,
+      "detail": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "application/javascript",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "W/\"6aec96ce-3f8b\"",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Content-Encoding": "gzip"
+      }
+    },
+    {
+      "name": "6. F5 en /productos entrega Angular",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "indexCoincide": true
+      }
+    },
+    {
+      "name": "Proxy Nginx hacia backend",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Swagger desactivado en prod",
+      "passed": true,
+      "detail": {
+        "status": 404
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/login",
+      "status": 200,
+      "duracionMs": 602.09,
+      "headers": {
+        "X-Request-Id": "35b74018",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/login",
+      "status": 200,
+      "duracionMs": 93.05,
+      "headers": {
+        "X-Request-Id": "1ffada22",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/health",
+      "status": 200,
+      "duracionMs": 38.92,
+      "headers": {
+        "X-Request-Id": "ff9e573a",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/health",
+      "status": 200,
+      "duracionMs": 71.83,
+      "headers": {
+        "X-Request-Id": "0683ac12",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "components": {
+          "db": {
+            "details": {
+              "database": "Oracle",
+              "validationQuery": "isValid()"
+            },
+            "status": "UP"
+          },
+          "diskSpace": {
+            "details": {
+              "total": 482420789248,
+              "free": 41501843456,
+              "threshold": 10485760,
+              "path": "C:\\Users\\jatni\\Downloads\\pharmaSoft-main\\.",
+              "exists": true
+            },
+            "status": "UP"
+          },
+          "livenessState": {
+            "status": "UP"
+          },
+          "ping": {
+            "status": "UP"
+          },
+          "readinessState": {
+            "status": "UP"
+          },
+          "redis": {
+            "details": {
+              "version": "7.4.12"
+            },
+            "status": "UP"
+          },
+          "ssl": {
+            "details": {
+              "expiringChains": [],
+              "invalidChains": [],
+              "validChains": []
+            },
+            "status": "UP"
+          }
+        },
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/metrics/http.server.requests",
+      "status": 200,
+      "duracionMs": 48.67,
+      "headers": {
+        "X-Request-Id": "fb80094b",
+        "Content-Disposition": "inline;filename=f.txt",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Content-Length": "476",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "availableTags": [
+          {
+            "tag": "exception",
+            "values": [
+              "none"
+            ]
+          },
+          {
+            "tag": "method",
+            "values": [
+              "POST",
+              "GET"
+            ]
+          },
+          {
+            "tag": "error",
+            "values": [
+              "none"
+            ]
+          },
+          {
+            "tag": "uri",
+            "values": [
+              "/actuator/health",
+              "/api/v1/auth/login"
+            ]
+          },
+          {
+            "tag": "outcome",
+            "values": [
+              "CLIENT_ERROR",
+              "SUCCESS"
+            ]
+          },
+          {
+            "tag": "status",
+            "values": [
+              "400",
+              "200"
+            ]
+          }
+        ],
+        "baseUnit": "seconds",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 6.0
+          },
+          {
+            "statistic": "TOTAL_TIME",
+            "value": 1.4488327
+          },
+          {
+            "statistic": "MAX",
+            "value": 0.5281555
+          }
+        ],
+        "name": "http.server.requests"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/metrics/http.server.requests",
+      "status": 403,
+      "duracionMs": 20.71,
+      "headers": {
+        "X-Request-Id": "1ccbaccc",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Content-Length": "210",
+        "Date": "Thu, 05 Nov 2026 16:20:37 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "timestamp": "2026-11-05T11:20:37.578927300",
+        "status": 403,
+        "error": "Forbidden",
+        "message": "No tiene permisos para realizar esta operación",
+        "path": "/actuator/metrics/http.server.requests",
+        "validationErrors": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 121.19,
+      "headers": {
+        "X-Request-Id": "da822a1d",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:38 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 39.69,
+      "headers": {
+        "X-Request-Id": "d7070f3f",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:38 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/metrics/cache.gets?tag=name:categorias&tag=result:hit",
+      "status": 200,
+      "duracionMs": 38.91,
+      "headers": {
+        "X-Request-Id": "3822754c",
+        "Content-Disposition": "inline;filename=f.txt",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Content-Length": "315",
+        "Date": "Thu, 05 Nov 2026 16:20:39 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "availableTags": [
+          {
+            "tag": "cache.manager",
+            "values": [
+              "cacheManager"
+            ]
+          },
+          {
+            "tag": "cache",
+            "values": [
+              "categorias"
+            ]
+          }
+        ],
+        "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 1.0
+          }
+        ],
+        "name": "cache.gets"
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 201,
+      "duracionMs": 129.85,
+      "headers": {
+        "X-Request-Id": "da5757a5",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:39 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 141,
+        "nombre": "S13 Suarez 1105112039",
+        "descripcion": "Evidencia local de invalidacion S13",
+        "estado": true,
+        "fechaCreacion": "2026-11-05T11:20:39.4537539",
+        "fechaModificacion": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 40.08,
+      "headers": {
+        "X-Request-Id": "530d9fd7",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 141,
+          "nombre": "S13 Suarez 1105112039",
+          "descripcion": "Evidencia local de invalidacion S13",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T11:20:39.4537539",
+          "fechaModificacion": null
+        },
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/productos",
+      "status": 201,
+      "duracionMs": 65.42,
+      "headers": {
+        "X-Request-Id": "e7523adb",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 101,
+        "nombre": "Producto S13 Suarez 1105112039",
+        "precio": 1.25,
+        "stock": 5,
+        "estado": true,
+        "categoriaId": 141,
+        "categoriaNombre": "S13 Suarez 1105112039",
+        "fechaCreacion": "2026-11-05T11:20:40.5322779",
+        "fechaModificacion": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/productos/101",
+      "status": 200,
+      "duracionMs": 53.37,
+      "headers": {
+        "X-Request-Id": "f21f1c02",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 101,
+        "nombre": "Producto S13 Suarez 1105112039",
+        "precio": 1.25,
+        "stock": 5,
+        "estado": true,
+        "categoriaId": 141,
+        "categoriaNombre": "S13 Suarez 1105112039",
+        "fechaCreacion": "2026-11-05T11:20:40.5322779",
+        "fechaModificacion": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/productos?pagina=0&tamanio=10&ordenarPor=nombre&direccion=asc",
+      "status": 200,
+      "duracionMs": 84.08,
+      "headers": {
+        "X-Request-Id": "8849b65b",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "contenido": [
+          {
+            "id": 21,
+            "nombre": "Amoxicilina 500mg",
+            "precio": 18,
+            "stock": 40,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-08-30T22:51:09.9237108",
+            "fechaModificacion": "2026-10-18T12:02:58.7177853"
+          },
+          {
+            "id": 41,
+            "nombre": "Auxiliar paginacion 01",
+            "precio": 1,
+            "stock": 2,
+            "estado": false,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-04T21:20:53.6246987",
+            "fechaModificacion": "2026-10-06T23:22:21.5308637"
+          },
+          {
+            "id": 22,
+            "nombre": "Azitromicina 250mg",
+            "precio": 22.5,
+            "stock": 32,
+            "estado": true,
+            "categoriaId": 61,
+            "categoriaNombre": "Antibioticos",
+            "fechaCreacion": "2026-08-30T22:52:03.4468222",
+            "fechaModificacion": "2026-10-12T13:06:13.8832611"
+          },
+          {
+            "id": 2,
+            "nombre": "Ibuprofeno 400mg",
+            "precio": 15,
+            "stock": 44,
+            "estado": true,
+            "categoriaId": 61,
+            "categoriaNombre": "Antibioticos",
+            "fechaCreacion": "2026-08-28T17:24:11.3942317",
+            "fechaModificacion": "2026-10-16T13:22:09.2566686"
+          },
+          {
+            "id": 61,
+            "nombre": "Producto Autonomo Suarez A01",
+            "precio": 8.5,
+            "stock": 10,
+            "estado": false,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-06T23:14:13.2444543",
+            "fechaModificacion": "2026-10-06T23:23:42.7922555"
+          },
+          {
+            "id": 81,
+            "nombre": "Producto Autonomo Suarez A02",
+            "precio": 18.9,
+            "stock": 3,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-12T12:23:52.353763",
+            "fechaModificacion": "2026-10-12T13:31:09.0951811"
+          },
+          {
+            "id": 82,
+            "nombre": "Producto Autonomo Suarez A03",
+            "precio": 12.35,
+            "stock": 10,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-12T12:23:52.5230992",
+            "fechaModificacion": null
+          },
+          {
+            "id": 83,
+            "nombre": "Producto Autonomo Suarez A04",
+            "precio": 12.5,
+            "stock": 0,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-12T12:23:52.5504567",
+            "fechaModificacion": "2026-10-12T12:36:19.5066532"
+          },
+          {
+            "id": 84,
+            "nombre": "Producto Autonomo Suarez A05",
+            "precio": 12.5,
+            "stock": 10,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-12T12:32:20.2454111",
+            "fechaModificacion": null
+          },
+          {
+            "id": 42,
+            "nombre": "Producto Evidencia Suarez 01",
+            "precio": 12.5,
+            "stock": 0,
+            "estado": true,
+            "categoriaId": 62,
+            "categoriaNombre": "Vitaminas",
+            "fechaCreacion": "2026-10-04T21:30:26.6528947",
+            "fechaModificacion": "2026-10-12T00:03:57.733234"
+          }
+        ],
+        "pagina": 0,
+        "tamanio": 10,
+        "totalElementos": 13,
+        "totalPaginas": 2,
+        "ultima": false
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/clientes?pagina=0&tamanio=100",
+      "status": 200,
+      "duracionMs": 49.59,
+      "headers": {
+        "X-Request-Id": "51effc83",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 21,
+          "dni": "70000001",
+          "nombres": "Jesus",
+          "apellidos": "Quezada",
+          "email": "cliente.prueba01@example.com",
+          "telefono": "912345678",
+          "direccion": null,
+          "estado": false,
+          "fechaCreacion": "2026-09-27T20:59:16.1649726",
+          "fechaModificacion": "2026-09-27T21:12:41.4526527"
+        },
+        {
+          "id": 22,
+          "dni": "70000002",
+          "nombres": "Jatniel",
+          "apellidos": "Suarez",
+          "email": "cliente.prueba02@example.com",
+          "telefono": null,
+          "direccion": null,
+          "estado": true,
+          "fechaCreacion": "2026-09-27T21:00:41.0637802",
+          "fechaModificacion": null
+        },
+        {
+          "id": 23,
+          "dni": "70000003",
+          "nombres": "Williams",
+          "apellidos": "Villaizan",
+          "email": "cliente.prueba03@example.com",
+          "telefono": null,
+          "direccion": null,
+          "estado": true,
+          "fechaCreacion": "2026-09-27T21:01:01.5157929",
+          "fechaModificacion": null
+        },
+        {
+          "id": 24,
+          "dni": "70000004",
+          "nombres": "Juan David",
+          "apellidos": "Armas",
+          "email": "cliente.prueba04@example.com",
+          "telefono": null,
+          "direccion": null,
+          "estado": true,
+          "fechaCreacion": "2026-09-27T21:01:27.3281066",
+          "fechaModificacion": null
+        },
+        {
+          "id": 25,
+          "dni": "70000005",
+          "nombres": "Ruben",
+          "apellidos": "Yactayo",
+          "email": "cliente.prueba05@example.com",
+          "telefono": null,
+          "direccion": null,
+          "estado": true,
+          "fechaCreacion": "2026-09-27T21:01:44.1160673",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "dni": "12345678",
+          "nombres": "Juan",
+          "apellidos": "Perez",
+          "email": "juan.perez@correo.com",
+          "telefono": "987654321",
+          "direccion": "Av. Siempre Viva 123",
+          "estado": true,
+          "fechaCreacion": "2026-09-03T20:01:21.2987468",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/ventas",
+      "status": 201,
+      "duracionMs": 133.81,
+      "headers": {
+        "X-Request-Id": "a668a62b",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:40 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 141,
+        "fecha": "2026-11-05T11:20:40.8174589",
+        "clienteId": 22,
+        "clienteNombre": "Jatniel Suarez",
+        "estado": "REGISTRADA",
+        "total": 1.25,
+        "detalles": [
+          {
+            "productoId": 101,
+            "productoNombre": "Producto S13 Suarez 1105112039",
+            "cantidad": 1,
+            "precio": 1.25,
+            "subtotal": 1.25
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/productos/101",
+      "status": 200,
+      "duracionMs": 35.81,
+      "headers": {
+        "X-Request-Id": "6b6cf09e",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:41 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 101,
+        "nombre": "Producto S13 Suarez 1105112039",
+        "precio": 1.25,
+        "stock": 4,
+        "estado": true,
+        "categoriaId": 141,
+        "categoriaNombre": "S13 Suarez 1105112039",
+        "fechaCreacion": "2026-11-05T11:20:40.5322779",
+        "fechaModificacion": "2026-11-05T11:20:40.8517968"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:8080/api/v1/categorias/141",
+      "status": 200,
+      "duracionMs": 40.57,
+      "headers": {
+        "X-Request-Id": "b2382394",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:41 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 141,
+        "nombre": "S13 Suarez 1105112039 Edit",
+        "descripcion": "Evidencia local de invalidacion S13",
+        "estado": true,
+        "fechaCreacion": "2026-11-05T11:20:39.4537539",
+        "fechaModificacion": null
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/productos/101",
+      "status": 200,
+      "duracionMs": 36.87,
+      "headers": {
+        "X-Request-Id": "29415756",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:41 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "id": 101,
+        "nombre": "Producto S13 Suarez 1105112039",
+        "precio": 1.25,
+        "stock": 4,
+        "estado": true,
+        "categoriaId": 141,
+        "categoriaNombre": "S13 Suarez 1105112039 Edit",
+        "fechaCreacion": "2026-11-05T11:20:40.5322779",
+        "fechaModificacion": "2026-11-05T11:20:40.8517968"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 46.43,
+      "headers": {
+        "X-Request-Id": "07da5a83",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:41 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 141,
+          "nombre": "S13 Suarez 1105112039 Edit",
+          "descripcion": "Evidencia local de invalidacion S13",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T11:20:39.4537539",
+          "fechaModificacion": "2026-11-05T11:20:41.4003569"
+        },
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 540.66,
+      "headers": {
+        "X-Request-Id": "783dd4ea",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:43 GMT",
+        "Connection": "close"
+      },
+      "body": [
+        {
+          "id": 141,
+          "nombre": "S13 Suarez 1105112039 Edit",
+          "descripcion": "Evidencia local de invalidacion S13",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T11:20:39.4537539",
+          "fechaModificacion": "2026-11-05T11:20:41.4003569"
+        },
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/health",
+      "status": 503,
+      "duracionMs": 542.06,
+      "headers": {
+        "X-Request-Id": "0a0b0946",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:43 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "DOWN"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/actuator/health",
+      "status": 200,
+      "duracionMs": 175.01,
+      "headers": {
+        "X-Request-Id": "e1b25a16",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/vnd.spring-boot.actuator.v3+json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:44 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8081/index.html",
+      "status": 200,
+      "duracionMs": 33.55,
+      "headers": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "1162",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "\"6aec96ce-48a\"",
+        "Cache-Control": "no-cache",
+        "Accept-Ranges": "bytes"
+      },
+      "body": "<!doctype html>\r\n<html lang=\"es\" data-beasties-container>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>PharmaSoft</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <meta name=\"theme-color\" content=\"#0f2e5c\">\r\n<style>*{box-sizing:border-box}html{min-"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8081/index.html",
+      "status": 200,
+      "duracionMs": 27.67,
+      "headers": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "1162",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "\"6aec96ce-48a\"",
+        "Cache-Control": "no-cache",
+        "Accept-Ranges": "bytes"
+      },
+      "body": "<!doctype html>\r\n<html lang=\"es\" data-beasties-container>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>PharmaSoft</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <meta name=\"theme-color\" content=\"#0f2e5c\">\r\n<style>*{box-sizing:border-box}html{min-"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8081/main-TSC4L75D.js",
+      "status": 200,
+      "duracionMs": 18.27,
+      "headers": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "application/javascript",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "W/\"6aec96ce-3f8b\"",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Content-Encoding": "gzip"
+      },
+      "body": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003�[[o��v�+t�c��-F�\u001dۡ�I3��x�\u0013{l'�40�\u0014�%1�H��,_\"��C\u001f�>�@��T\u001c�h�\u000eP�(p\u001e��<�o�_П�o�\u000bEJ��3��<�\"�e����[k�p4N��f��2�t��szx?e{1=|<`����=\u0013/.'�h2��s�fz�\u000e���}/>\r\u0003vH�^L١�r�^���ώ�ï\u000eؑh���\u0007��z�N��ˈ��\u0017\u001f��\u001b1q����\u001f\u0006�\u0013]^\u000f�/Z�\u0007�\u0017o�\fY \u001e~<`\\|��xJ����/��l ��\u00036\u0014o�\u001e����g�=�=\u001c�\u000f�E:e#z����e�)�(�\\�X*�\u001f�L<DS6\u0011m�L�\u0005uz:dS"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8081/productos",
+      "status": 200,
+      "duracionMs": 25.11,
+      "headers": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "1162",
+        "Last-Modified": "Thu, 05 Nov 2026 14:46:38 GMT",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "ETag": "\"6aec96ce-48a\"",
+        "Cache-Control": "no-cache",
+        "Accept-Ranges": "bytes"
+      },
+      "body": "<!doctype html>\r\n<html lang=\"es\" data-beasties-container>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>PharmaSoft</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <meta name=\"theme-color\" content=\"#0f2e5c\">\r\n<style>*{box-sizing:border-box}html{min-"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8081/api/v1/categorias",
+      "status": 200,
+      "duracionMs": 44.79,
+      "headers": {
+        "Server": "nginx/1.27.5",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Vary": "Accept-Encoding",
+        "X-Request-Id": "9c7f9d22",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY"
+      },
+      "body": [
+        {
+          "id": 141,
+          "nombre": "S13 Suarez 1105112039 Edit",
+          "descripcion": "Evidencia local de invalidacion S13",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T11:20:39.4537539",
+          "fechaModificacion": "2026-11-05T11:20:41.4003569"
+        },
+        {
+          "id": 61,
+          "nombre": "Antibioticos",
+          "descripcion": "Medicamentos para infecciones bacterianas",
+          "estado": false,
+          "fechaCreacion": "2026-08-30T22:41:56.5537747",
+          "fechaModificacion": "2026-10-04T21:32:21.2833219"
+        },
+        {
+          "id": 62,
+          "nombre": "Vitaminas",
+          "descripcion": "Suplementos vitamínicos",
+          "estado": true,
+          "fechaCreacion": "2026-08-30T22:44:26.1570779",
+          "fechaModificacion": null
+        },
+        {
+          "id": 1,
+          "nombre": "Antialérgicos y Antihistamínicos",
+          "descripcion": "Tratamiento para la rinitis aguda, urticaria y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:50:41.5422611",
+          "fechaModificacion": null
+        },
+        {
+          "id": 2,
+          "nombre": "Antialérgicos",
+          "descripcion": "Medicamentos seleccionados para alergias y alergias estacionales.",
+          "estado": true,
+          "fechaCreacion": "2026-08-20T22:53:32.6713853",
+          "fechaModificacion": null
+        },
+        {
+          "id": 121,
+          "nombre": "Pruebacaché",
+          "descripcion": "Pruebas s13 caché",
+          "estado": true,
+          "fechaCreacion": "2026-11-05T10:25:16.5328283",
+          "fechaModificacion": null
+        },
+        {
+          "id": 21,
+          "nombre": "Analgésicos",
+          "descripcion": "Medicamentos para el alivio del dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-23T23:01:05.5770031",
+          "fechaModificacion": null
+        },
+        {
+          "id": 41,
+          "nombre": "Analgesicos",
+          "descripcion": "Medicamentos para el dolor",
+          "estado": true,
+          "fechaCreacion": "2026-08-28T16:58:28.580572",
+          "fechaModificacion": null
+        },
+        {
+          "id": 101,
+          "nombre": "Pruebas inactiva",
+          "descripcion": null,
+          "estado": false,
+          "fechaCreacion": "2026-10-04T21:16:41.2645856",
+          "fechaModificacion": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/v3/api-docs",
+      "status": 404,
+      "duracionMs": 27.86,
+      "headers": {
+        "X-Request-Id": "67d739f7",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "X-Frame-Options": "DENY",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 05 Nov 2026 16:20:45 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "timestamp": "2026-11-05T16:20:45.180Z",
+        "status": 404,
+        "error": "Not Found",
+        "path": "/v3/api-docs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "sin": {
+    "n": 3,
+    "repeticiones": [
+      {
+        "run": "2",
+        "bytesInicio": 141868,
+        "jsBytesInicio": 139101,
+        "ventasClickMs": 152.6,
+        "ventasHeadingMs": 40.8,
+        "ventasLoginMs": 2322.6,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      {
+        "run": "3",
+        "bytesInicio": 141871,
+        "jsBytesInicio": 139101,
+        "ventasClickMs": 246.9,
+        "ventasHeadingMs": 93.3,
+        "ventasLoginMs": 2474.7,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      {
+        "run": "4",
+        "bytesInicio": 141871,
+        "jsBytesInicio": 139101,
+        "ventasClickMs": 143.5,
+        "ventasHeadingMs": 43,
+        "ventasLoginMs": 2335.7,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      }
+    ],
+    "medianaBytesInicio": 141871,
+    "medianaJsBytesInicio": 139101,
+    "medianaVentasClickMs": 152.6,
+    "medianaVentasHeadingMs": 43,
+    "medianaVentasLoginMs": 2335.7
+  },
+  "con": {
+    "n": 3,
+    "repeticiones": [
+      {
+        "run": "2",
+        "bytesInicio": 194749,
+        "jsBytesInicio": 191977,
+        "ventasClickMs": 99.7,
+        "ventasHeadingMs": 36.7,
+        "ventasLoginMs": 2270.2,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      {
+        "run": "3",
+        "bytesInicio": 194748,
+        "jsBytesInicio": 191977,
+        "ventasClickMs": 137.6,
+        "ventasHeadingMs": 45.7,
+        "ventasLoginMs": 2296.5,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      {
+        "run": "4",
+        "bytesInicio": 194745,
+        "jsBytesInicio": 191977,
+        "ventasClickMs": 104.9,
+        "ventasHeadingMs": 58.6,
+        "ventasLoginMs": 2280,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        }
+      }
+    ],
+    "medianaBytesInicio": 194748,
+    "medianaJsBytesInicio": 191977,
+    "medianaVentasClickMs": 104.9,
+    "medianaVentasHeadingMs": 45.7,
+    "medianaVentasLoginMs": 2280
+  }
+}

@@ -34,7 +34,7 @@
           <div><dt>DNI</dt><dd>{{ clienteActual.dni }}</dd></div>
         }
         <div>
-          <dt>Estado</dt>
+          <dt>Registrado por</dt><dd>{{ ventaActual.creadoPor ?? 'sin registro' }}</dd></div><div><dt>Estado</dt>
           <dd><span class="status" [class.cancelled]="ventaActual.estado === 'ANULADA'">{{ ventaActual.estado }}</span></dd>
         </div>
       </dl>

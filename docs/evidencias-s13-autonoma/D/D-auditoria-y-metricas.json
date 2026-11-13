@@ -1,0 +1,61 @@
+{
+  "audit": {
+    "patronPasswordBearerSecret": 0,
+    "claveJwtCompleta": false,
+    "tokensCompletos": false,
+    "passwordDBCompleto": false,
+    "dniClientesCompletos": 0
+  },
+  "logBytes": 72252,
+  "dniValoresComprobados": 6,
+  "metricsVentas": {
+    "availableTags": [
+      {
+        "tag": "exception",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "method",
+        "values": [
+          "POST"
+        ]
+      },
+      {
+        "tag": "error",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "outcome",
+        "values": [
+          "SUCCESS"
+        ]
+      },
+      {
+        "tag": "status",
+        "values": [
+          "201"
+        ]
+      }
+    ],
+    "baseUnit": "seconds",
+    "measurements": [
+      {
+        "statistic": "COUNT",
+        "value": 1.0
+      },
+      {
+        "statistic": "TOTAL_TIME",
+        "value": 0.173444
+      },
+      {
+        "statistic": "MAX",
+        "value": 0.173444
+      }
+    ],
+    "name": "http.server.requests"
+  }
+}

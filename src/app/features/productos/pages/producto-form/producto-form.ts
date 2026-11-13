@@ -24,6 +24,7 @@ export class ProductoForm implements OnInit {
   private readonly categoriaService = inject(CategoriaService);
   private readonly router = inject(Router);
 
+  protected readonly autoria = signal('');
   protected readonly categorias = signal<Categoria[]>([]);
   protected readonly categoriaOriginal = signal<number | null>(null);
   protected readonly cargando = signal(true);
@@ -67,6 +68,7 @@ export class ProductoForm implements OnInit {
       next: ({ categorias, producto }) => {
         this.categorias.set(categorias);
         this.categoriaOriginal.set(producto.categoriaId);
+        this.autoria.set(`Creado por ${producto.creadoPor ?? 'sin registro'} · Modificado por ${producto.modificadoPor ?? 'sin registro'}`);
         this.form.setValue({
           nombre: producto.nombre,
           precio: producto.precio,

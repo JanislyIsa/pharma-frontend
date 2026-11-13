@@ -1,10 +1,10 @@
 import { CurrencyPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { FormArray, FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { forkJoin } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, forkJoin, of, switchMap } from 'rxjs';
 import { mensajeError } from '../../../../core/utils/http-error';
 import { redondear } from '../../../../core/utils/numeros';
 import { coincide } from '../../../../core/utils/texto';
@@ -37,6 +37,7 @@ export class VentaForm implements OnInit {
 
   protected readonly clientes = signal<Cliente[]>([]);
   protected readonly productos = signal<Producto[]>([]);
+  private readonly resultadosBusqueda = signal<Producto[]>([]);
   protected readonly cargando = signal(true);
   protected readonly confirmando = signal(false);
   protected readonly guardando = signal(false);
@@ -69,7 +70,7 @@ export class VentaForm implements OnInit {
   protected readonly productosEncontrados = computed(() => {
     const texto = this.textoProducto().trim();
     if (!texto) return [];
-    return this.productos()
+    return this.resultadosBusqueda()
       .filter((producto) => coincide(texto, producto.nombre, producto.categoriaNombre))
       .slice(0, MAX_RESULTADOS);
   });
@@ -102,10 +103,24 @@ export class VentaForm implements OnInit {
     this.clientes().find((cliente) => cliente.id === this.valor().clienteId),
   );
 
+  constructor() {
+    this.buscarProducto.valueChanges.pipe(
+      debounceTime(300), distinctUntilChanged(),
+      switchMap(texto => this.productoService.buscarVendibles(texto.trim()).pipe(
+        catchError((err: HttpErrorResponse) => { this.error.set(mensajeError(err)); return of(null); })
+      )), takeUntilDestroyed(),
+    ).subscribe(pagina => {
+      this.resultadosBusqueda.set(pagina?.contenido ?? []);
+      if (pagina) this.productos.update(anteriores => [...new Map(
+        [...anteriores,...pagina.contenido].map(p => [p.id,p])
+      ).values()]);
+    });
+  }
+
   ngOnInit(): void {
     forkJoin({
       clientes: this.clienteService.listar(0, 100),
-      productos: this.productoService.listar(0, 100, 'nombre', 'asc'),
+      productos: this.productoService.buscarVendibles(''),
     }).subscribe({
       next: ({ clientes, productos }) => {
         const listaClientes = Array.isArray(clientes) ? clientes : clientes.contenido;

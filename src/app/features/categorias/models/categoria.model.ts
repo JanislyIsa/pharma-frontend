@@ -1,4 +1,6 @@
 export interface Categoria {
+  creadoPor?: string | null;
+  modificadoPor?: string | null;
   id: number;
   nombre: string;
   descripcion: string | null;

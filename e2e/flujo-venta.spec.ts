@@ -44,7 +44,16 @@ test('flujo integrado: cliente, catálogo, venta, stock, reportes y auditoría',
   expect(venta.creadoPor).toBe('vendedor');
   await expect(page.getByText('Venta registrada correctamente.', { exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'Productos', exact: true }).click();
+  await page.getByRole('combobox', { name: 'Filas', exact: true }).selectOption('100');
+  await expect(page.getByTestId('tabla-productos').locator('tbody tr')).toHaveCount(100);
   const fila = page.getByTestId('tabla-productos').locator('tbody tr').filter({ hasText: datos.nombre });
+  // El producto puede estar en cualquier página: recorrer los controles reales sin F5.
+  while (await fila.count() === 0) {
+    const anterior = await page.getByTestId('pagina-actual').innerText();
+    await expect(page.getByRole('button', { name: 'Siguiente', exact: true })).toBeEnabled();
+    await page.getByRole('button', { name: 'Siguiente', exact: true }).click();
+    await expect(page.getByTestId('pagina-actual')).not.toHaveText(anterior);
+  }
   await expect(fila.locator('td').nth(3)).toHaveText(String(stockAntes - 2));
   const audit = await (await request.get(API + '/auditoria?accion=VENTA_REGISTRADA&usuario=vendedor', { headers })).json();
   expect(audit.contenido).toEqual(expect.arrayContaining([expect.objectContaining({ entidadId: venta.id, usuario: 'vendedor', requestId })]));

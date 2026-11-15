@@ -15,15 +15,15 @@ interface Evento { id:number; fecha:string; usuario:string; accion:string; entid
  <form (submit)="$event.preventDefault(); filtrar(u.value,a.value,d.value,h.value)">
  <label>Usuario <input #u [value]="usuario() ?? ''"></label>
  <label>Acción <select #a [value]="accion() ?? ''"><option value="">Todas</option>
- <option>LOGIN_EXITOSO</option><option>LOGIN_FALLIDO</option><option>VENTA_REGISTRADA</option><option>PRECIO_MODIFICADO</option><option>PRODUCTO_ELIMINADO</option></select></label>
+ <option>LOGIN_EXITOSO</option><option>LOGIN_FALLIDO</option><option>VENTA_REGISTRADA</option><option>PRECIO_MODIFICADO</option><option>PRODUCTO_ELIMINADO</option><option>CLIENTE_REGISTRADO</option><option>VENTA_ANULADA</option></select></label>
  <label>Desde <input #d type="date" [value]="desde() ?? ''"></label><label>Hasta <input #h type="date" [value]="hasta() ?? ''"></label>
  <button type="submit">Buscar</button></form>
  @if (consulta.error()) { <p role="alert">{{ error() }}</p> }
  @if (consulta.isLoading()) { <p role="status">Cargando eventos…</p> }
  @if (resultado(); as p) {
- <div class="tabla"><table data-testid="tabla-auditoria"><thead><tr><th>Fecha</th><th>Usuario</th><th>Acción</th><th>Entidad</th><th>Detalle</th><th>Solicitud</th></tr></thead><tbody>
- @for(e of p.contenido; track e.id) {<tr><td>{{e.fecha | date:'dd/MM/yyyy HH:mm:ss'}}</td><td>{{e.usuario}}</td><td>{{e.accion}}</td><td>{{e.entidad}} {{e.entidadId}}</td><td>{{e.detalle}}</td><td>{{e.requestId}}</td></tr>}
- @empty {<tr><td colspan="6">No hay eventos con esos filtros.</td></tr>}
+ <div class="tabla"><table data-testid="tabla-auditoria"><thead><tr><th>Fecha</th><th>Usuario</th><th>Acción</th><th>Entidad</th><th>ID</th><th>Detalle</th><th>Solicitud</th></tr></thead><tbody>
+ @for(e of p.contenido; track e.id) {<tr><td>{{e.fecha | date:'dd/MM/yyyy HH:mm:ss'}}</td><td>{{e.usuario}}</td><td>{{e.accion}}</td><td>{{e.entidad}}</td><td>{{e.entidadId}}</td><td>{{e.detalle}}</td><td>{{e.requestId}}</td></tr>}
+ @empty {<tr><td colspan="7">No hay eventos con esos filtros.</td></tr>}
  </tbody></table></div>
  <app-paginador [pagina]="p.pagina" [totalPaginas]="p.totalPaginas" [totalElementos]="p.totalElementos" [tamanio]="p.tamanio" [deshabilitado]="consulta.isLoading()" (cambioPagina)="navegar({pagina:$event})" (cambioTamanio)="navegar({tamanio:$event,pagina:0})" />}
  `,

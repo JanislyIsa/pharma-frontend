@@ -14,7 +14,7 @@ interface Evento { id:number; fecha:string; usuario:string; accion:string; entid
  template:`<h1>Auditoría</h1><p>Consulta los accesos y cambios registrados en el sistema.</p>
  <form (submit)="$event.preventDefault(); filtrar(u.value,a.value,d.value,h.value)">
  <label>Usuario <input #u [value]="usuario() ?? ''"></label>
- <label>Acción <select #a [value]="accion() ?? ''"><option value="">Todas</option>
+ <label>Acción <select #a aria-label="Acción" [value]="accion() ?? ''"><option value="">Todas</option>
  <option>LOGIN_EXITOSO</option><option>LOGIN_FALLIDO</option><option>VENTA_REGISTRADA</option><option>PRECIO_MODIFICADO</option><option>PRODUCTO_ELIMINADO</option><option>CLIENTE_REGISTRADO</option><option>VENTA_ANULADA</option></select></label>
  <label>Desde <input #d type="date" [value]="desde() ?? ''"></label><label>Hasta <input #h type="date" [value]="hasta() ?? ''"></label>
  <button type="submit">Buscar</button></form>

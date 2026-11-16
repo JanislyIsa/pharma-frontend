@@ -1,0 +1,33 @@
+> Building...
+√ Building...
+Initial chunk files | Names             |  Raw size | Estimated transfer size
+chunk-CoS_Klh9.js   | -                 | 198.26 kB |                57.68 kB
+chunk-CkZH0Laf.js   | -                 |  92.03 kB |                23.38 kB
+main-J56NTIJU.js    | main              |  72.09 kB |                16.38 kB
+styles-E6WR7BPR.css | styles            |   1.64 kB |               557 bytes
+chunk-D6aTU5l0.js   | -                 |  56 bytes |                56 bytes
+
+                    | Initial total     | 364.09 kB |                98.05 kB
+
+Lazy chunk files    | Names             |  Raw size | Estimated transfer size
+chunk-Cq2tsHOO.js   | ventas-routes     |  42.04 kB |                10.22 kB
+chunk-Dhu7JLDv.js   | producto-list     |  11.27 kB |                 3.27 kB
+chunk-C0jeMIe6.js   | cliente-list      |  10.79 kB |                 3.21 kB
+chunk-CCeZ0hCT.js   | producto-form     |   9.88 kB |                 3.19 kB
+chunk-Ba1S1R4u.js   | ventas-categoria  |   7.67 kB |                 2.73 kB
+chunk-BSKDPnGb.js   | cliente-form      |   7.51 kB |                 2.44 kB
+chunk-DUtwoCDz.js   | categoria-list    |   7.19 kB |                 2.38 kB
+chunk-BhPtjTjE.js   | categoria-form    |   5.81 kB |                 2.08 kB
+chunk-fH2GTspe.js   | inicio            |   3.69 kB |                 1.27 kB
+chunk-CHZwPc-O.js   | no-encontrado     | 904 bytes |               904 bytes
+chunk-BgFDABMf.js   | -                 | 686 bytes |               686 bytes
+chunk-CvB6b0Tr.js   | -                 | 651 bytes |               651 bytes
+chunk-nn1QPfI4.js   | -                 | 630 bytes |               630 bytes
+chunk-C502O2Jo.js   | categorias-routes | 613 bytes |               613 bytes
+chunk-2IG-5Sm5.js   | productos-routes  | 603 bytes |               603 bytes
+...and 4 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [5.901 seconds] - 2026-11-05T14:17:30.794Z
+
+Output location: C:\Users\jatni\Downloads\pharma-frontend\dist\pharma-frontend
+

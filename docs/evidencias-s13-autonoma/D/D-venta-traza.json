@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/ventas",
+    "status": 201,
+    "requestId": "e6438c16",
+    "entityId": 161
+  },
+  "logLines": [
+    "2026-11-08 18:41:17,297 INFO  [e6438c16] p.e.p.P.s.impl.VentaServiceImpl - Inicio de registro de venta. clienteId=22, cantidadDetalles=1",
+    "2026-11-08 18:41:17,303 INFO  [e6438c16] p.e.p.P.s.impl.VentaServiceImpl - Procesando producto. productoId=122, cantidadSolicitada=1",
+    "2026-11-08 18:41:17,374 INFO  [e6438c16] p.e.p.P.s.impl.VentaServiceImpl - Venta registrada con éxito. ventaId=161, total=4.5",
+    "2026-11-08 18:41:17,395 INFO  [e6438c16] p.e.p.P.config.RequestIdFilter - POST /api/v1/ventas -> 201 (173 ms)"
+  ]
+}

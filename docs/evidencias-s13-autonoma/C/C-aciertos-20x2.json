@@ -1,0 +1,279 @@
+{
+  "fecha": "2026-11-08T18:39:27.842631",
+  "series": {
+    "categorias": {
+      "before": {
+        "hit": 21.0,
+        "miss": 8.0
+      },
+      "after": {
+        "hit": 40.0,
+        "miss": 9.0
+      },
+      "hits": 19.0,
+      "misses": 1.0,
+      "hitRatePercent": 95.0,
+      "firstMissMs": 37.785,
+      "meanHitsMs": 23.104,
+      "calls": [
+        {
+          "numero": 1,
+          "status": 200,
+          "durationMs": 37.785,
+          "requestId": "a1c95bc2"
+        },
+        {
+          "numero": 2,
+          "status": 200,
+          "durationMs": 13.123,
+          "requestId": "7387306c"
+        },
+        {
+          "numero": 3,
+          "status": 200,
+          "durationMs": 11.201,
+          "requestId": "7b4e9d96"
+        },
+        {
+          "numero": 4,
+          "status": 200,
+          "durationMs": 11.883,
+          "requestId": "a2044bd2"
+        },
+        {
+          "numero": 5,
+          "status": 200,
+          "durationMs": 11.947,
+          "requestId": "431a984a"
+        },
+        {
+          "numero": 6,
+          "status": 200,
+          "durationMs": 13.046,
+          "requestId": "2582a43a"
+        },
+        {
+          "numero": 7,
+          "status": 200,
+          "durationMs": 13.968,
+          "requestId": "355971ad"
+        },
+        {
+          "numero": 8,
+          "status": 200,
+          "durationMs": 15.938,
+          "requestId": "e7412543"
+        },
+        {
+          "numero": 9,
+          "status": 200,
+          "durationMs": 35.445,
+          "requestId": "82a0378b"
+        },
+        {
+          "numero": 10,
+          "status": 200,
+          "durationMs": 34.423,
+          "requestId": "01a92ebd"
+        },
+        {
+          "numero": 11,
+          "status": 200,
+          "durationMs": 28.127,
+          "requestId": "9ef84264"
+        },
+        {
+          "numero": 12,
+          "status": 200,
+          "durationMs": 29.882,
+          "requestId": "a0605b8e"
+        },
+        {
+          "numero": 13,
+          "status": 200,
+          "durationMs": 14.08,
+          "requestId": "606eb0e6"
+        },
+        {
+          "numero": 14,
+          "status": 200,
+          "durationMs": 31.535,
+          "requestId": "3b2b1024"
+        },
+        {
+          "numero": 15,
+          "status": 200,
+          "durationMs": 32.921,
+          "requestId": "00b56a9e"
+        },
+        {
+          "numero": 16,
+          "status": 200,
+          "durationMs": 15.512,
+          "requestId": "48cca1c6"
+        },
+        {
+          "numero": 17,
+          "status": 200,
+          "durationMs": 30.724,
+          "requestId": "b515059b"
+        },
+        {
+          "numero": 18,
+          "status": 200,
+          "durationMs": 30.742,
+          "requestId": "4b2de50e"
+        },
+        {
+          "numero": 19,
+          "status": 200,
+          "durationMs": 30.135,
+          "requestId": "1674c262"
+        },
+        {
+          "numero": 20,
+          "status": 200,
+          "durationMs": 34.335,
+          "requestId": "e976e8b0"
+        }
+      ]
+    },
+    "productos": {
+      "before": {
+        "hit": 19.0,
+        "miss": 11.0
+      },
+      "after": {
+        "hit": 38.0,
+        "miss": 12.0
+      },
+      "hits": 19.0,
+      "misses": 1.0,
+      "hitRatePercent": 95.0,
+      "firstMissMs": 43.226,
+      "meanHitsMs": 25.355,
+      "calls": [
+        {
+          "numero": 1,
+          "status": 200,
+          "durationMs": 43.226,
+          "requestId": "4b16d446"
+        },
+        {
+          "numero": 2,
+          "status": 200,
+          "durationMs": 35.13,
+          "requestId": "07ceecda"
+        },
+        {
+          "numero": 3,
+          "status": 200,
+          "durationMs": 30.708,
+          "requestId": "64d76748"
+        },
+        {
+          "numero": 4,
+          "status": 200,
+          "durationMs": 29.59,
+          "requestId": "0674f222"
+        },
+        {
+          "numero": 5,
+          "status": 200,
+          "durationMs": 32.277,
+          "requestId": "780e3566"
+        },
+        {
+          "numero": 6,
+          "status": 200,
+          "durationMs": 12.265,
+          "requestId": "dde3d8cd"
+        },
+        {
+          "numero": 7,
+          "status": 200,
+          "durationMs": 13.058,
+          "requestId": "f11e33a7"
+        },
+        {
+          "numero": 8,
+          "status": 200,
+          "durationMs": 34.536,
+          "requestId": "233f0cc8"
+        },
+        {
+          "numero": 9,
+          "status": 200,
+          "durationMs": 31.905,
+          "requestId": "7ee5fc1d"
+        },
+        {
+          "numero": 10,
+          "status": 200,
+          "durationMs": 12.049,
+          "requestId": "04be82cb"
+        },
+        {
+          "numero": 11,
+          "status": 200,
+          "durationMs": 33.897,
+          "requestId": "f1c3393a"
+        },
+        {
+          "numero": 12,
+          "status": 200,
+          "durationMs": 30.617,
+          "requestId": "ebcc19d2"
+        },
+        {
+          "numero": 13,
+          "status": 200,
+          "durationMs": 32.01,
+          "requestId": "f2d5826a"
+        },
+        {
+          "numero": 14,
+          "status": 200,
+          "durationMs": 12.346,
+          "requestId": "114ad9a7"
+        },
+        {
+          "numero": 15,
+          "status": 200,
+          "durationMs": 34.893,
+          "requestId": "4685b2dc"
+        },
+        {
+          "numero": 16,
+          "status": 200,
+          "durationMs": 17.531,
+          "requestId": "407deb9c"
+        },
+        {
+          "numero": 17,
+          "status": 200,
+          "durationMs": 12.513,
+          "requestId": "fa02d228"
+        },
+        {
+          "numero": 18,
+          "status": 200,
+          "durationMs": 13.246,
+          "requestId": "9b1ff955"
+        },
+        {
+          "numero": 19,
+          "status": 200,
+          "durationMs": 31.448,
+          "requestId": "3142efe9"
+        },
+        {
+          "numero": 20,
+          "status": 200,
+          "durationMs": 31.732,
+          "requestId": "b3165d3e"
+        }
+      ]
+    }
+  }
+}

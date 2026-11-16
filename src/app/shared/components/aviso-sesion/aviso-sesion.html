@@ -1,0 +1,9 @@
+@if (visible() && !oculto()) {
+  <section class="session-warning" role="status" aria-live="polite">
+    <span>Tu sesión está por vencer. Tiempo restante: <strong>{{ tiempo() }}</strong>.</span>
+    <div class="actions">
+      <button type="button" class="close-session" (click)="cerrarSesion()">Cerrar sesión</button>
+      <button type="button" class="dismiss" aria-label="Ocultar aviso de sesión" (click)="cerrar()">×</button>
+    </div>
+  </section>
+}

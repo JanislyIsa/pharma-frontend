@@ -1,0 +1,196 @@
+{
+  "mode": "sin precarga",
+  "run": "3",
+  "phase": "Medición completa",
+  "pauseOnHomeMs": 2000,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "homeAfterLoginMs": 183.8,
+  "firstScreenTransferBytes": 141871,
+  "firstScreenEncodedBytes": 138271,
+  "firstScreenJsTransferBytes": 139101,
+  "firstScreenResources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferBytes": 80907,
+      "encodedBytes": 80607,
+      "durationMs": 25
+    },
+    {
+      "path": "/chunk-BRTYZcTR.js",
+      "transferBytes": 31300,
+      "encodedBytes": 31000,
+      "durationMs": 34.7
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferBytes": 372,
+      "encodedBytes": 72,
+      "durationMs": 21.8
+    },
+    {
+      "path": "/main-VPYMPTTP.js",
+      "transferBytes": 2431,
+      "encodedBytes": 2131,
+      "durationMs": 22.2
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferBytes": 1072,
+      "encodedBytes": 772,
+      "durationMs": 8.2
+    },
+    {
+      "path": "/chunk-CDiAoLEq.js",
+      "transferBytes": 2746,
+      "encodedBytes": 2446,
+      "durationMs": 9.8
+    },
+    {
+      "path": "/chunk-BfnIEY5M.js",
+      "transferBytes": 524,
+      "encodedBytes": 224,
+      "durationMs": 12.8
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferBytes": 14358,
+      "encodedBytes": 14058,
+      "durationMs": 13.7
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "transferBytes": 736,
+      "encodedBytes": 436,
+      "durationMs": 145.5
+    },
+    {
+      "path": "/chunk-cLX9lxxy.js",
+      "transferBytes": 4197,
+      "encodedBytes": 3897,
+      "durationMs": 10.9
+    },
+    {
+      "path": "/chunk-LhXyAEq3.js",
+      "transferBytes": 2266,
+      "encodedBytes": 1966,
+      "durationMs": 11.1
+    }
+  ],
+  "salesHeadingAfterClickMs": 93.3,
+  "salesDataAfterClickMs": 246.9,
+  "salesDataAfterLoginMs": 2474.7,
+  "totalTransferBytes": 151420,
+  "totalResources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferBytes": 80907,
+      "encodedBytes": 80607,
+      "durationMs": 25
+    },
+    {
+      "path": "/chunk-BRTYZcTR.js",
+      "transferBytes": 31300,
+      "encodedBytes": 31000,
+      "durationMs": 34.7
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferBytes": 372,
+      "encodedBytes": 72,
+      "durationMs": 21.8
+    },
+    {
+      "path": "/main-VPYMPTTP.js",
+      "transferBytes": 2431,
+      "encodedBytes": 2131,
+      "durationMs": 22.2
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferBytes": 1072,
+      "encodedBytes": 772,
+      "durationMs": 8.2
+    },
+    {
+      "path": "/chunk-CDiAoLEq.js",
+      "transferBytes": 2746,
+      "encodedBytes": 2446,
+      "durationMs": 9.8
+    },
+    {
+      "path": "/chunk-BfnIEY5M.js",
+      "transferBytes": 524,
+      "encodedBytes": 224,
+      "durationMs": 12.8
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferBytes": 14358,
+      "encodedBytes": 14058,
+      "durationMs": 13.7
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "transferBytes": 736,
+      "encodedBytes": 436,
+      "durationMs": 145.5
+    },
+    {
+      "path": "/chunk-cLX9lxxy.js",
+      "transferBytes": 4197,
+      "encodedBytes": 3897,
+      "durationMs": 10.9
+    },
+    {
+      "path": "/chunk-LhXyAEq3.js",
+      "transferBytes": 2266,
+      "encodedBytes": 1966,
+      "durationMs": 11.1
+    },
+    {
+      "path": "/chunk-DLZcoxbY.js",
+      "transferBytes": 603,
+      "encodedBytes": 303,
+      "durationMs": 11.9
+    },
+    {
+      "path": "/chunk-Dq33WttF.js",
+      "transferBytes": 5162,
+      "encodedBytes": 4862,
+      "durationMs": 9.1
+    },
+    {
+      "path": "/chunk-aOjhkPsD.js",
+      "transferBytes": 740,
+      "encodedBytes": 440,
+      "durationMs": 9.7
+    },
+    {
+      "path": "/chunk-D8WkTfwB.js",
+      "transferBytes": 696,
+      "encodedBytes": 396,
+      "durationMs": 15.6
+    },
+    {
+      "path": "/chunk-DIhsZNoT.js",
+      "transferBytes": 682,
+      "encodedBytes": 382,
+      "durationMs": 9.9
+    },
+    {
+      "path": "/api/v1/clientes",
+      "transferBytes": 762,
+      "encodedBytes": 462,
+      "durationMs": 68.6
+    },
+    {
+      "path": "/api/v1/ventas/buscar",
+      "transferBytes": 904,
+      "encodedBytes": 604,
+      "durationMs": 150
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "time": "2026-11-08T23:40:01.458Z",
+  "url": "http://localhost:8081/productos",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/productos",
+      "status": 200,
+      "requestId": "b2da8761"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/categorias",
+      "status": 200,
+      "requestId": "b8f9b9c5"
+    }
+  ],
+  "navigation": {
+    "type": "navigate",
+    "transferSize": 951,
+    "encodedBodySize": 651,
+    "responseStatus": 200
+  },
+  "resources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferSize": 0,
+      "encodedBodySize": 80607,
+      "decodedBodySize": 208379,
+      "durationMs": 28.8,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-BRTYZcTR.js",
+      "transferSize": 0,
+      "encodedBodySize": 31000,
+      "decodedBodySize": 91846,
+      "durationMs": 26.8,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferSize": 0,
+      "encodedBodySize": 72,
+      "decodedBodySize": 54,
+      "durationMs": 22.9,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/main-OGNHT4Q7.js",
+      "transferSize": 2433,
+      "encodedBodySize": 2133,
+      "decodedBodySize": 4987,
+      "durationMs": 30.4,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferSize": 0,
+      "encodedBodySize": 772,
+      "decodedBodySize": 1644,
+      "durationMs": 2,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-D3B4_GX7.js",
+      "transferSize": 611,
+      "encodedBodySize": 311,
+      "decodedBodySize": 603,
+      "durationMs": 7.9,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-DlHxG-Jr.js",
+      "transferSize": 2748,
+      "encodedBodySize": 2448,
+      "decodedBodySize": 5533,
+      "durationMs": 5.1,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferSize": 0,
+      "encodedBodySize": 14058,
+      "decodedBodySize": 50304,
+      "durationMs": 2.7,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CDttbNPX.js",
+      "transferSize": 577,
+      "encodedBodySize": 277,
+      "decodedBodySize": 360,
+      "durationMs": 6.1,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "transferSize": 784,
+      "encodedBodySize": 484,
+      "decodedBodySize": 670,
+      "durationMs": 164.4,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-CU9zlPZQ.js",
+      "transferSize": 4459,
+      "encodedBodySize": 4159,
+      "decodedBodySize": 11303,
+      "durationMs": 7.3,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-jgKQEQ2o.js",
+      "transferSize": 4198,
+      "encodedBodySize": 3898,
+      "decodedBodySize": 10308,
+      "durationMs": 7.4,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-DbG_zYnu.js",
+      "transferSize": 684,
+      "encodedBodySize": 384,
+      "decodedBodySize": 635,
+      "durationMs": 10,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-BFPuulvm.js",
+      "transferSize": 610,
+      "encodedBodySize": 310,
+      "decodedBodySize": 521,
+      "durationMs": 10.9,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-CPKVs7tV.js",
+      "transferSize": 686,
+      "encodedBodySize": 386,
+      "decodedBodySize": 594,
+      "durationMs": 12.2,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/categorias",
+      "transferSize": 999,
+      "encodedBodySize": 699,
+      "decodedBodySize": 2048,
+      "durationMs": 37.3,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/productos",
+      "transferSize": 1014,
+      "encodedBodySize": 714,
+      "decodedBodySize": 2404,
+      "durationMs": 27.4,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    }
+  ]
+}

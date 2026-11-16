@@ -21,12 +21,12 @@
       } @else {
         <div class="search-box">
           <input class="input" type="search" [formControl]="buscarCliente"
-            placeholder="Buscar cliente por nombre, apellido o DNI…" aria-label="Buscar cliente"
+            placeholder="Buscar cliente por nombre, apellido o DNI…" aria-label="Buscar cliente" data-testid="buscar-cliente"
             (keydown.enter)="$event.preventDefault()">
           @if (hayBusquedaCliente()) {
             <ul class="results">
               @for (cliente of clientesEncontrados(); track cliente.id) {
-                <li><button type="button" (click)="elegirCliente(cliente)">
+                <li><button type="button" data-testid="opcion-cliente" (click)="elegirCliente(cliente)">
                   <strong>{{ cliente.apellidos }}, {{ cliente.nombres }}</strong><span class="muted">DNI {{ cliente.dni }}</span>
                 </button></li>
               } @empty {
@@ -48,11 +48,11 @@
           <input class="input" type="search" [formControl]="buscarProducto"
             (keydown.enter)="agregarPrimero($event)"
             placeholder="Buscar producto por nombre o categoría… (Enter agrega el primero)"
-            aria-label="Buscar producto">
+            aria-label="Buscar producto" data-testid="buscar-producto">
           @if (hayBusquedaProducto()) {
             <ul class="results">
               @for (producto of productosEncontrados(); track producto.id) {
-                <li><button type="button" (click)="agregarProducto(producto)">
+                <li><button type="button" data-testid="opcion-producto" [attr.data-stock]="producto.stock" (click)="agregarProducto(producto)">
                   <strong>{{ producto.nombre }}</strong>
                   <span class="muted">{{ producto.categoriaNombre }}</span>
                   <span class="muted">{{ producto.precio | currency:'PEN':'S/ ':'1.2-2' }}</span>
@@ -79,7 +79,7 @@
                   </td>
                   <td>{{ lineas()[i]?.precio | currency:'PEN':'S/ ':'1.2-2' }}</td>
                   <td>
-                    <input class="input quantity" type="number" min="1" step="1" formControlName="cantidad" aria-label="Cantidad">
+                    <input class="input quantity" type="number" min="1" step="1" formControlName="cantidad" aria-label="Cantidad" data-testid="cantidad">
                     @if (lineas()[i]?.excedeStock) { <small class="field-error">Supera el stock ({{ lineas()[i]?.producto?.stock }})</small> }
                     @if (linea.controls.cantidad.touched && linea.controls.cantidad.invalid) { <small class="field-error">Ingrese un entero mayor que cero.</small> }
                   </td>
@@ -90,7 +90,7 @@
                 <tr><td colspan="5" class="empty table-empty">Aún no hay productos. Usa el buscador para agregarlos.</td></tr>
               }
             </tbody>
-            <tfoot><tr><td colspan="3" class="amount">Total estimado</td><td class="amount total">{{ total() | currency:'PEN':'S/ ':'1.2-2' }}</td><td></td></tr></tfoot>
+            <tfoot><tr><td colspan="3" class="amount">Total estimado</td><td class="amount total" data-testid="total-venta">{{ total() | currency:'PEN':'S/ ':'1.2-2' }}</td><td></td></tr></tfoot>
           </table>
         </div>
       }

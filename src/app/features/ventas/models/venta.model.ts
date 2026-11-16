@@ -9,6 +9,7 @@ export interface DetalleVenta {
 }
 
 export interface Venta {
+  creadoPor?: string | null;
   id: number;
   fecha: string;
   clienteId: number;

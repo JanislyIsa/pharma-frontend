@@ -1,0 +1,227 @@
+{
+  "time": "2026-11-08T23:40:10.907Z",
+  "url": "http://localhost:8081/ventas",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/productos",
+      "status": 200,
+      "requestId": "cc5a6dec"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/categorias",
+      "status": 200,
+      "requestId": "daae62fd"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/clientes",
+      "status": 200,
+      "requestId": "2baaee48"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ventas/buscar",
+      "status": 200,
+      "requestId": "a6cbbac4"
+    }
+  ],
+  "navigation": {
+    "type": "reload",
+    "transferSize": 300,
+    "encodedBodySize": 651,
+    "responseStatus": 200
+  },
+  "resources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferSize": 0,
+      "encodedBodySize": 80607,
+      "decodedBodySize": 208379,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-BRTYZcTR.js",
+      "transferSize": 0,
+      "encodedBodySize": 31000,
+      "decodedBodySize": 91846,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferSize": 0,
+      "encodedBodySize": 72,
+      "decodedBodySize": 54,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/main-OGNHT4Q7.js",
+      "transferSize": 0,
+      "encodedBodySize": 2133,
+      "decodedBodySize": 4987,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferSize": 0,
+      "encodedBodySize": 772,
+      "decodedBodySize": 1644,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-D3B4_GX7.js",
+      "transferSize": 0,
+      "encodedBodySize": 311,
+      "decodedBodySize": 603,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-jgKQEQ2o.js",
+      "transferSize": 0,
+      "encodedBodySize": 3898,
+      "decodedBodySize": 10308,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CU9zlPZQ.js",
+      "transferSize": 0,
+      "encodedBodySize": 4159,
+      "decodedBodySize": 11303,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-DbG_zYnu.js",
+      "transferSize": 0,
+      "encodedBodySize": 384,
+      "decodedBodySize": 635,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-BFPuulvm.js",
+      "transferSize": 0,
+      "encodedBodySize": 310,
+      "decodedBodySize": 521,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CDttbNPX.js",
+      "transferSize": 0,
+      "encodedBodySize": 277,
+      "decodedBodySize": 360,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CPKVs7tV.js",
+      "transferSize": 0,
+      "encodedBodySize": 386,
+      "decodedBodySize": 594,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/api/v1/categorias",
+      "transferSize": 999,
+      "encodedBodySize": 699,
+      "decodedBodySize": 2048,
+      "durationMs": 25.5,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/productos",
+      "transferSize": 1014,
+      "encodedBodySize": 714,
+      "decodedBodySize": 2404,
+      "durationMs": 24.7,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-DoAIz3T4.js",
+      "transferSize": 0,
+      "encodedBodySize": 306,
+      "decodedBodySize": 500,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-807RgT9E.js",
+      "transferSize": 0,
+      "encodedBodySize": 4859,
+      "decodedBodySize": 12208,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferSize": 0,
+      "encodedBodySize": 14058,
+      "decodedBodySize": 50304,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-D8WkTfwB.js",
+      "transferSize": 0,
+      "encodedBodySize": 396,
+      "decodedBodySize": 656,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-aOjhkPsD.js",
+      "transferSize": 0,
+      "encodedBodySize": 440,
+      "decodedBodySize": 770,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/api/v1/clientes",
+      "transferSize": 762,
+      "encodedBodySize": 462,
+      "decodedBodySize": 1401,
+      "durationMs": 22.9,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/ventas/buscar",
+      "transferSize": 904,
+      "encodedBodySize": 604,
+      "decodedBodySize": 2588,
+      "durationMs": 48.6,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    }
+  ]
+}

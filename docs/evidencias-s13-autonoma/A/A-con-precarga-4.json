@@ -1,0 +1,442 @@
+{
+  "mode": "con precarga",
+  "run": "4",
+  "phase": "Medición completa",
+  "pauseOnHomeMs": 2000,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "homeAfterLoginMs": 124.7,
+  "firstScreenTransferBytes": 194745,
+  "firstScreenEncodedBytes": 184245,
+  "firstScreenJsTransferBytes": 191977,
+  "firstScreenResources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferBytes": 80907,
+      "encodedBytes": 80607,
+      "durationMs": 23.6
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferBytes": 372,
+      "encodedBytes": 72,
+      "durationMs": 18.5
+    },
+    {
+      "path": "/chunk-4-T1vHJ1.js",
+      "transferBytes": 31912,
+      "encodedBytes": 31612,
+      "durationMs": 20.3
+    },
+    {
+      "path": "/main-2E7G7XQO.js",
+      "transferBytes": 2449,
+      "encodedBytes": 2149,
+      "durationMs": 18
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferBytes": 1072,
+      "encodedBytes": 772,
+      "durationMs": 6.2
+    },
+    {
+      "path": "/chunk-B3TrVJbC.js",
+      "transferBytes": 2746,
+      "encodedBytes": 2446,
+      "durationMs": 7.8
+    },
+    {
+      "path": "/chunk-BfnIEY5M.js",
+      "transferBytes": 524,
+      "encodedBytes": 224,
+      "durationMs": 9.9
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferBytes": 14358,
+      "encodedBytes": 14058,
+      "durationMs": 10.5
+    },
+    {
+      "path": "/chunk-yPUeT1Lh.js",
+      "transferBytes": 4195,
+      "encodedBytes": 3895,
+      "durationMs": 9.5
+    },
+    {
+      "path": "/chunk-B6o4lO6c.js",
+      "transferBytes": 2266,
+      "encodedBytes": 1966,
+      "durationMs": 10.3
+    },
+    {
+      "path": "/chunk-DlYD9lmD.js",
+      "transferBytes": 619,
+      "encodedBytes": 319,
+      "durationMs": 9.8
+    },
+    {
+      "path": "/chunk-CPI9OO9H.js",
+      "transferBytes": 605,
+      "encodedBytes": 305,
+      "durationMs": 10.4
+    },
+    {
+      "path": "/chunk-CayRgB57.js",
+      "transferBytes": 615,
+      "encodedBytes": 315,
+      "durationMs": 10.7
+    },
+    {
+      "path": "/chunk-UJvh0iA1.js",
+      "transferBytes": 605,
+      "encodedBytes": 305,
+      "durationMs": 12.6
+    },
+    {
+      "path": "/chunk-DHXxn668.js",
+      "transferBytes": 569,
+      "encodedBytes": 269,
+      "durationMs": 14.7
+    },
+    {
+      "path": "/chunk-CBnxedao.js",
+      "transferBytes": 1095,
+      "encodedBytes": 795,
+      "durationMs": 18
+    },
+    {
+      "path": "/chunk-CoTMYgl7.js",
+      "transferBytes": 885,
+      "encodedBytes": 585,
+      "durationMs": 15.2
+    },
+    {
+      "path": "/chunk-B3ejfCdN.js",
+      "transferBytes": 3305,
+      "encodedBytes": 3005,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-DcAUVz_m.js",
+      "transferBytes": 2834,
+      "encodedBytes": 2534,
+      "durationMs": 8.2
+    },
+    {
+      "path": "/chunk-BlbKKeUd.js",
+      "transferBytes": 4377,
+      "encodedBytes": 4077,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-CuRoiNMY.js",
+      "transferBytes": 3323,
+      "encodedBytes": 3023,
+      "durationMs": 11.8
+    },
+    {
+      "path": "/chunk-BhBwi3sg.js",
+      "transferBytes": 4455,
+      "encodedBytes": 4155,
+      "durationMs": 10.9
+    },
+    {
+      "path": "/chunk-o8q_7xJb.js",
+      "transferBytes": 4221,
+      "encodedBytes": 3921,
+      "durationMs": 11
+    },
+    {
+      "path": "/chunk-CL4n72fz.js",
+      "transferBytes": 5162,
+      "encodedBytes": 4862,
+      "durationMs": 12.2
+    },
+    {
+      "path": "/chunk-sAMBlzwI.js",
+      "transferBytes": 7018,
+      "encodedBytes": 6718,
+      "durationMs": 15
+    },
+    {
+      "path": "/chunk-CM--OBaa.js",
+      "transferBytes": 4815,
+      "encodedBytes": 4515,
+      "durationMs": 14.1
+    },
+    {
+      "path": "/chunk-B8y2qWsj.js",
+      "transferBytes": 3601,
+      "encodedBytes": 3301,
+      "durationMs": 11.8
+    },
+    {
+      "path": "/chunk-BFPuulvm.js",
+      "transferBytes": 610,
+      "encodedBytes": 310,
+      "durationMs": 9.3
+    },
+    {
+      "path": "/chunk-BxMSxo3t.js",
+      "transferBytes": 685,
+      "encodedBytes": 385,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-D8WkTfwB.js",
+      "transferBytes": 696,
+      "encodedBytes": 396,
+      "durationMs": 10
+    },
+    {
+      "path": "/chunk-DbG_zYnu.js",
+      "transferBytes": 684,
+      "encodedBytes": 384,
+      "durationMs": 9.9
+    },
+    {
+      "path": "/chunk-CwgsUYUo.js",
+      "transferBytes": 729,
+      "encodedBytes": 429,
+      "durationMs": 10.4
+    },
+    {
+      "path": "/chunk-aOjhkPsD.js",
+      "transferBytes": 740,
+      "encodedBytes": 440,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "transferBytes": 733,
+      "encodedBytes": 433,
+      "durationMs": 78.7
+    }
+  ],
+  "salesHeadingAfterClickMs": 58.6,
+  "salesDataAfterClickMs": 104.9,
+  "salesDataAfterLoginMs": 2280,
+  "totalTransferBytes": 196411,
+  "totalResources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferBytes": 80907,
+      "encodedBytes": 80607,
+      "durationMs": 23.6
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferBytes": 372,
+      "encodedBytes": 72,
+      "durationMs": 18.5
+    },
+    {
+      "path": "/chunk-4-T1vHJ1.js",
+      "transferBytes": 31912,
+      "encodedBytes": 31612,
+      "durationMs": 20.3
+    },
+    {
+      "path": "/main-2E7G7XQO.js",
+      "transferBytes": 2449,
+      "encodedBytes": 2149,
+      "durationMs": 18
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferBytes": 1072,
+      "encodedBytes": 772,
+      "durationMs": 6.2
+    },
+    {
+      "path": "/chunk-B3TrVJbC.js",
+      "transferBytes": 2746,
+      "encodedBytes": 2446,
+      "durationMs": 7.8
+    },
+    {
+      "path": "/chunk-BfnIEY5M.js",
+      "transferBytes": 524,
+      "encodedBytes": 224,
+      "durationMs": 9.9
+    },
+    {
+      "path": "/chunk-CTCcvUU0.js",
+      "transferBytes": 14358,
+      "encodedBytes": 14058,
+      "durationMs": 10.5
+    },
+    {
+      "path": "/chunk-yPUeT1Lh.js",
+      "transferBytes": 4195,
+      "encodedBytes": 3895,
+      "durationMs": 9.5
+    },
+    {
+      "path": "/chunk-B6o4lO6c.js",
+      "transferBytes": 2266,
+      "encodedBytes": 1966,
+      "durationMs": 10.3
+    },
+    {
+      "path": "/chunk-DlYD9lmD.js",
+      "transferBytes": 619,
+      "encodedBytes": 319,
+      "durationMs": 9.8
+    },
+    {
+      "path": "/chunk-CPI9OO9H.js",
+      "transferBytes": 605,
+      "encodedBytes": 305,
+      "durationMs": 10.4
+    },
+    {
+      "path": "/chunk-CayRgB57.js",
+      "transferBytes": 615,
+      "encodedBytes": 315,
+      "durationMs": 10.7
+    },
+    {
+      "path": "/chunk-UJvh0iA1.js",
+      "transferBytes": 605,
+      "encodedBytes": 305,
+      "durationMs": 12.6
+    },
+    {
+      "path": "/chunk-DHXxn668.js",
+      "transferBytes": 569,
+      "encodedBytes": 269,
+      "durationMs": 14.7
+    },
+    {
+      "path": "/chunk-CBnxedao.js",
+      "transferBytes": 1095,
+      "encodedBytes": 795,
+      "durationMs": 18
+    },
+    {
+      "path": "/chunk-CoTMYgl7.js",
+      "transferBytes": 885,
+      "encodedBytes": 585,
+      "durationMs": 15.2
+    },
+    {
+      "path": "/chunk-B3ejfCdN.js",
+      "transferBytes": 3305,
+      "encodedBytes": 3005,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-DcAUVz_m.js",
+      "transferBytes": 2834,
+      "encodedBytes": 2534,
+      "durationMs": 8.2
+    },
+    {
+      "path": "/chunk-BlbKKeUd.js",
+      "transferBytes": 4377,
+      "encodedBytes": 4077,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-CuRoiNMY.js",
+      "transferBytes": 3323,
+      "encodedBytes": 3023,
+      "durationMs": 11.8
+    },
+    {
+      "path": "/chunk-BhBwi3sg.js",
+      "transferBytes": 4455,
+      "encodedBytes": 4155,
+      "durationMs": 10.9
+    },
+    {
+      "path": "/chunk-o8q_7xJb.js",
+      "transferBytes": 4221,
+      "encodedBytes": 3921,
+      "durationMs": 11
+    },
+    {
+      "path": "/chunk-CL4n72fz.js",
+      "transferBytes": 5162,
+      "encodedBytes": 4862,
+      "durationMs": 12.2
+    },
+    {
+      "path": "/chunk-sAMBlzwI.js",
+      "transferBytes": 7018,
+      "encodedBytes": 6718,
+      "durationMs": 15
+    },
+    {
+      "path": "/chunk-CM--OBaa.js",
+      "transferBytes": 4815,
+      "encodedBytes": 4515,
+      "durationMs": 14.1
+    },
+    {
+      "path": "/chunk-B8y2qWsj.js",
+      "transferBytes": 3601,
+      "encodedBytes": 3301,
+      "durationMs": 11.8
+    },
+    {
+      "path": "/chunk-BFPuulvm.js",
+      "transferBytes": 610,
+      "encodedBytes": 310,
+      "durationMs": 9.3
+    },
+    {
+      "path": "/chunk-BxMSxo3t.js",
+      "transferBytes": 685,
+      "encodedBytes": 385,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/chunk-D8WkTfwB.js",
+      "transferBytes": 696,
+      "encodedBytes": 396,
+      "durationMs": 10
+    },
+    {
+      "path": "/chunk-DbG_zYnu.js",
+      "transferBytes": 684,
+      "encodedBytes": 384,
+      "durationMs": 9.9
+    },
+    {
+      "path": "/chunk-CwgsUYUo.js",
+      "transferBytes": 729,
+      "encodedBytes": 429,
+      "durationMs": 10.4
+    },
+    {
+      "path": "/chunk-aOjhkPsD.js",
+      "transferBytes": 740,
+      "encodedBytes": 440,
+      "durationMs": 9.2
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "transferBytes": 733,
+      "encodedBytes": 433,
+      "durationMs": 78.7
+    },
+    {
+      "path": "/api/v1/clientes",
+      "transferBytes": 762,
+      "encodedBytes": 462,
+      "durationMs": 29.8
+    },
+    {
+      "path": "/api/v1/ventas/buscar",
+      "transferBytes": 904,
+      "encodedBytes": 604,
+      "durationMs": 60.7
+    }
+  ]
+}

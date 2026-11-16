@@ -1,0 +1,152 @@
+{
+  "time": "2026-11-08T23:43:59.736Z",
+  "url": "http://localhost:8081/productos",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/categorias",
+      "status": 200,
+      "requestId": "cd5d767b"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/productos",
+      "status": 200,
+      "requestId": "da7b3d26"
+    }
+  ],
+  "navigation": {
+    "type": "reload",
+    "transferSize": 951,
+    "encodedBodySize": 651,
+    "responseStatus": 200
+  },
+  "resources": [
+    {
+      "path": "/chunk-D384zYmb.js",
+      "transferSize": 0,
+      "encodedBodySize": 80607,
+      "decodedBodySize": 208379,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-BRTYZcTR.js",
+      "transferSize": 0,
+      "encodedBodySize": 31000,
+      "decodedBodySize": 91846,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-kiu1T7UI.js",
+      "transferSize": 0,
+      "encodedBodySize": 72,
+      "decodedBodySize": 54,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/main-RW7DF4L2.js",
+      "transferSize": 2429,
+      "encodedBodySize": 2129,
+      "decodedBodySize": 4987,
+      "durationMs": 22.9,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/styles-E6WR7BPR.css",
+      "transferSize": 0,
+      "encodedBodySize": 772,
+      "decodedBodySize": 1644,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-DrvPfKsD.js",
+      "transferSize": 610,
+      "encodedBodySize": 310,
+      "decodedBodySize": 603,
+      "durationMs": 7.8,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-6xZn1UJM.js",
+      "transferSize": 4197,
+      "encodedBodySize": 3897,
+      "decodedBodySize": 10308,
+      "durationMs": 7.2,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-DuCnzr9e.js",
+      "transferSize": 4459,
+      "encodedBodySize": 4159,
+      "decodedBodySize": 11302,
+      "durationMs": 17.4,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/chunk-DbG_zYnu.js",
+      "transferSize": 0,
+      "encodedBodySize": 384,
+      "decodedBodySize": 635,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-BFPuulvm.js",
+      "transferSize": 0,
+      "encodedBodySize": 310,
+      "decodedBodySize": 521,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CDttbNPX.js",
+      "transferSize": 0,
+      "encodedBodySize": 277,
+      "decodedBodySize": 360,
+      "durationMs": 0,
+      "responseStatus": 200,
+      "source": "cache local (memoria/disco)"
+    },
+    {
+      "path": "/chunk-CMWMkreR.js",
+      "transferSize": 685,
+      "encodedBodySize": 385,
+      "decodedBodySize": 594,
+      "durationMs": 12.1,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/categorias",
+      "transferSize": 999,
+      "encodedBodySize": 699,
+      "decodedBodySize": 2048,
+      "durationMs": 23.2,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    },
+    {
+      "path": "/api/v1/productos",
+      "transferSize": 1017,
+      "encodedBodySize": 717,
+      "decodedBodySize": 2404,
+      "durationMs": 27.8,
+      "responseStatus": 200,
+      "source": "red o revalidacion"
+    }
+  ]
+}

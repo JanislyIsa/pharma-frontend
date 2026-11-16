@@ -1,0 +1,91 @@
+diff --git a/angular.json b/angular.json
+index 65c385f..a2c9677 100644
+--- a/angular.json
++++ b/angular.json
+@@ -25,6 +25,14 @@
+               ],
+               "outputHashing": "all"
+             },
++            "preloading": {
++              "fileReplacements": [
++                {
++                  "replace": "src/app/core/routing/route-preloading.ts",
++                  "with": "src/app/core/routing/route-preloading.all.ts"
++                }
++              ]
++            },
+             "development": {
+               "optimization": false,
+               "extractLicenses": false,
+diff --git a/src/app/app.config.ts b/src/app/app.config.ts
+index 3cf2ac3..91b6a3d 100644
+--- a/src/app/app.config.ts
++++ b/src/app/app.config.ts
+@@ -4,11 +4,12 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
+ import { routes } from './app.routes';
+ import { authInterceptor } from './core/interceptors/auth-interceptor';
+ import { errorInterceptor } from './core/interceptors/error-interceptor';
++import { ROUTE_PRELOADING } from './core/routing/route-preloading';
+ 
+ export const appConfig: ApplicationConfig = {
+   providers: [
+     provideBrowserGlobalErrorListeners(),
+-    provideRouter(routes, withComponentInputBinding()),
++    provideRouter(routes, withComponentInputBinding(), ...ROUTE_PRELOADING),
+     provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
+   ],
+ };
+diff --git a/src/app/app.routes.ts b/src/app/app.routes.ts
+index 6011f42..eaa6ea0 100644
+--- a/src/app/app.routes.ts
++++ b/src/app/app.routes.ts
+@@ -1,8 +1,6 @@
+ import { Routes } from '@angular/router';
+-import { MainLayout } from './layout/main-layout/main-layout';
+ import { authGuard, invitadoGuard } from './core/guards/auth-guard';
+ import { permisoGuard } from './core/guards/permiso-guard';
+-import { AccesoDenegado } from './shared/pages/acceso-denegado/acceso-denegado';
+ 
+ export const routes: Routes = [
+   {
+@@ -13,7 +11,7 @@ export const routes: Routes = [
+   },
+   {
+     path: '',
+-    component: MainLayout,
++    loadComponent: () => import('./layout/main-layout/main-layout').then((m) => m.MainLayout),
+     canActivate: [authGuard],
+     canActivateChild: [authGuard],
+     children: [
+@@ -48,7 +46,11 @@ export const routes: Routes = [
+         canActivate: [permisoGuard], data: { permiso: 'REPORTES_VER' },
+         loadChildren: () => import('./features/reportes/reportes.routes').then((m) => m.REPORTES_ROUTES),
+       },
+-      { path: 'acceso-denegado', component: AccesoDenegado, title: 'Acceso denegado · PharmaSoft' },
++      {
++        path: 'acceso-denegado',
++        loadComponent: () => import('./shared/pages/acceso-denegado/acceso-denegado').then((m) => m.AccesoDenegado),
++        title: 'Acceso denegado · PharmaSoft',
++      },
+     ],
+   },
+   {
+diff --git a/src/app/features/ventas/ventas.routes.ts b/src/app/features/ventas/ventas.routes.ts
+index 3603d18..25414c9 100644
+--- a/src/app/features/ventas/ventas.routes.ts
++++ b/src/app/features/ventas/ventas.routes.ts
+@@ -1,11 +1,8 @@
+ import { Routes } from '@angular/router';
+ import { permisoGuard } from '../../core/guards/permiso-guard';
+-import { VentaList } from './pages/venta-list/venta-list';
+-import { VentaForm } from './pages/venta-form/venta-form';
+-import { VentaDetalle } from './pages/venta-detalle/venta-detalle';
+ 
+ export const VENTAS_ROUTES: Routes = [
+-  { path: '', component: VentaList, title: 'Consulta de ventas' },
+-  { path: 'nueva', canActivate: [permisoGuard], data: { permiso: 'VENTAS_REGISTRAR' }, component: VentaForm, title: 'Nueva venta' },
+-  { path: ':id', component: VentaDetalle, title: 'Detalle de venta' },
++  { path: '', loadComponent: () => import('./pages/venta-list/venta-list').then((m) => m.VentaList), title: 'Consulta de ventas' },
++  { path: 'nueva', canActivate: [permisoGuard], data: { permiso: 'VENTAS_REGISTRAR' }, loadComponent: () => import('./pages/venta-form/venta-form').then((m) => m.VentaForm), title: 'Nueva venta' },
++  { path: ':id', loadComponent: () => import('./pages/venta-detalle/venta-detalle').then((m) => m.VentaDetalle), title: 'Detalle de venta' },
+ ];

@@ -1,0 +1,7 @@
+{
+  "method": "POST",
+  "path": "/api/v1/ventas",
+  "status": 201,
+  "requestId": "e6438c16",
+  "entityId": 161
+}

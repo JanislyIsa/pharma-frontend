@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../core/auth/auth-service';
+import { MasVendidos } from './mas-vendidos';
 
 @Component({
   selector: 'app-inicio',
-  imports: [RouterLink],
+  imports: [RouterLink, MasVendidos],
   template: `
     <section class="welcome">
       <p class="eyebrow">PHARMASOFT · OPERACIONES</p>
@@ -16,6 +18,17 @@ import { RouterLink } from '@angular/router';
       <a class="quick-card" routerLink="/clientes"><span class="quick-icon">♙</span><span><small>RELACIONES</small><strong>Clientes</strong><em>Consulta y actualiza registros</em></span><b>↗</b></a>
     </section>
     <p class="note"><span class="note-dot"></span> Conectado a PharmaBackend <code>localhost:8080</code></p>
+    @if (auth.tienePermiso('REPORTES_VER')) {
+      @defer (on viewport) {
+        <app-mas-vendidos />
+      } @placeholder {
+        <p class="card">Productos más vendidos</p>
+      } @loading (minimum 300ms) {
+        <p class="card" role="status">Cargando reporte…</p>
+      } @error {
+        <p class="alerta" role="alert">No se pudo cargar el reporte.</p>
+      }
+    }
   `,
   styles: [`
     .welcome { padding: clamp(27px, 5vw, 58px); border: 1px solid #e3e8f0; border-radius: 22px; background: linear-gradient(115deg,#fff 15%,#eef2f8 100%); }
@@ -39,4 +52,6 @@ import { RouterLink } from '@angular/router';
     @media(max-width:600px) { .quick-grid { grid-template-columns: 1fr; } }
   `],
 })
-export class Inicio {}
+export class Inicio {
+  protected readonly auth = inject(AuthService);
+}

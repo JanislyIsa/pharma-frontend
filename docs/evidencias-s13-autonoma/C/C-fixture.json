@@ -1,0 +1,10 @@
+{
+  "categoriaId": 163,
+  "productoId": 122,
+  "productoNombre": "AA S13 Auto Producto 1108183923",
+  "clienteId": 22,
+  "clienteBusqueda": "Jatniel",
+  "stockAntesVenta": 8,
+  "precio": 4.5,
+  "queryLista": "/api/v1/productos?pagina=0&tamanio=10&ordenarPor=nombre&direccion=asc"
+}

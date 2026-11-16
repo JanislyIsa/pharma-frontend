@@ -1,0 +1,41 @@
+{
+  "instancia": "prod temporal 8082, Redis DB 1",
+  "configuracion": "--spring.cache.redis.time-to-live=1m",
+  "muestras": [
+    {
+      "seconds": 0.0,
+      "ttl": 60,
+      "exists": 1
+    },
+    {
+      "seconds": 11.4,
+      "ttl": 48,
+      "exists": 1
+    },
+    {
+      "seconds": 22.7,
+      "ttl": 37,
+      "exists": 1
+    },
+    {
+      "seconds": 34.0,
+      "ttl": 25,
+      "exists": 1
+    },
+    {
+      "seconds": 45.4,
+      "ttl": 14,
+      "exists": 1
+    },
+    {
+      "seconds": 56.5,
+      "ttl": 3,
+      "exists": 1
+    },
+    {
+      "seconds": 67.9,
+      "ttl": -2,
+      "exists": 0
+    }
+  ]
+}

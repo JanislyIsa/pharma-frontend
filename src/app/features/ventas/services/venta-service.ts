@@ -25,12 +25,13 @@ export class VentaService {
     filtro: FiltroVentas,
     pagina: number,
     tamanio: number,
+    direccion: 'asc' | 'desc' = 'desc',
   ): Observable<PaginaResponse<Venta>> {
     let params = new HttpParams()
       .set('pagina', pagina)
       .set('tamanio', tamanio)
       .set('ordenarPor', 'fecha')
-      .set('direccion', 'desc');
+      .set('direccion', direccion);
     if (filtro.clienteId !== null) params = params.set('clienteId', filtro.clienteId);
     if (filtro.estado) params = params.set('estado', filtro.estado);
     if (filtro.desde) params = params.set('desde', filtro.desde);
